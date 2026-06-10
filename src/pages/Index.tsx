@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const PHOTOS = {
-  hero: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/17f02f97-956f-4df7-9a41-32aa95498c69.jpg",
+  hero: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/e46e2a2c-ec65-4509-a3e2-8c5a2226fe10.jpg",
   group: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/a1703a75-34a3-4eab-854c-16848b7e60ae.jpg",
   portrait: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/4fe0e89f-c884-4fe8-822c-ee8f8f18eefd.jpg",
   journal: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/1a2b14d0-a61e-45da-bafe-17e7127b97a7.jpg",
