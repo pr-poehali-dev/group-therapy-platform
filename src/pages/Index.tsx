@@ -5,7 +5,7 @@ const PHOTOS = {
   hero: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/acae5c0b-c267-4c44-9008-c26a67f4461e.jpg",
   group: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/e3b656eb-7074-4510-82b4-fe3247852689.jpg",
   portrait: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f7353052-3dbf-4e6e-b0be-e454923ba7ab.jpg",
-  journal: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/1a2b14d0-a61e-45da-bafe-17e7127b97a7.jpg",
+  journal: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/298cdf80-b9c5-4158-963e-d4eb0f59dc92.JPG",
   online: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/092201c9-e974-44a8-84f6-e88a2d7b795b.JPG",
 };
 
