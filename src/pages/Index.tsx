@@ -224,7 +224,7 @@ export default function Index() {
               <FadeUp delay={400}>
                 <div className="flex flex-wrap gap-6">
                   {[
-                    { icon: "MapPin", text: "Онлайн из любого города" },
+                    { icon: "MapPin", text: "Офлайн и онлайн в Москве" },
                     { icon: "Users", text: "Группы до 10 человек" },
                     { icon: "Sparkles", text: "Подбор под запрос" },
                   ].map((item, i) => (
