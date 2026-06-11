@@ -50,31 +50,11 @@ const FOR_WHOM = [
   "Хотите работать в группе под руководством специалиста",
 ];
 
-const REVIEWS = [
-  {
-    name: "Анна, 31 год",
-    topic: "Тревожность",
-    text: "Я боялась, что в группе будет неловко. Но уже после второй встречи поняла — здесь можно говорить честно. Ощущение, что тебя наконец слышат.",
-    color: "bg-lavender-light",
-  },
-  {
-    name: "Михаил, 38 лет",
-    topic: "Выгорание",
-    text: "Работал по 12 часов и думал, что это норма. Группа помогла увидеть, как я сам создаю себе ловушки. Стало намного легче.",
-    color: "bg-blue-light",
-  },
-  {
-    name: "Екатерина, 27 лет",
-    topic: "Самооценка",
-    text: "Индивидуальная терапия была не по карману. Групповой формат оказался даже эффективнее — слышишь чужие истории и узнаёшь себя.",
-    color: "bg-beige",
-  },
-  {
-    name: "Дмитрий, 34 года",
-    topic: "Отношения",
-    text: "Понял, что у моих проблем в отношениях есть корни. Психолог помог их увидеть, а группа — почувствовать, что я не один такой.",
-    color: "bg-lavender-light",
-  },
+const REVIEW_SCREENSHOTS = [
+  { id: 1, color: "bg-lavender-light" },
+  { id: 2, color: "bg-blue-light" },
+  { id: 3, color: "bg-beige" },
+  { id: 4, color: "bg-lavender-light" },
 ];
 
 const FAQS = [
@@ -579,38 +559,42 @@ export default function Index() {
       <section id="reviews" className="py-20" style={{ backgroundColor: "var(--beige)" }}>
         <div className="max-w-6xl mx-auto px-6">
           <FadeUp>
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <div className="section-tag mb-4">отзывы</div>
-              <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
+              <h2 className="font-display text-4xl lg:text-5xl font-light mb-6" style={{ color: "var(--text-main)" }}>
                 Те, кто уже попробовал
               </h2>
+              <div className="inline-flex flex-col items-center gap-2">
+                <div className="flex items-baseline gap-3">
+                  <span className="font-display text-6xl font-light" style={{ color: "var(--olive)" }}>4.9</span>
+                  <div className="flex flex-col items-start">
+                    <div className="flex">
+                      {[1,2,3,4,5].map((s) => (
+                        <span key={s} className="text-amber-400 text-xl">★</span>
+                      ))}
+                    </div>
+                    <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>средняя оценка клиентов</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </FadeUp>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {REVIEWS.map((r, i) => (
-              <FadeUp key={i} delay={i * 80}>
-                <div className={`${r.color} rounded-2xl p-6 h-full flex flex-col`}>
-                  <div className="flex mb-3">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <span key={s} className="text-amber-400 text-sm">★</span>
-                    ))}
-                  </div>
-                  <p className="font-body text-sm leading-relaxed flex-1 mb-5" style={{ color: "var(--text-main)" }}>
-                    «{r.text}»
-                  </p>
-                  <div className="flex items-center gap-3">
+            {REVIEW_SCREENSHOTS.map((r, i) => (
+              <FadeUp key={r.id} delay={i * 80}>
+                <div className={`${r.color} rounded-2xl overflow-hidden h-80 flex items-center justify-center relative group`}>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-60">
                     <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg font-medium"
+                      className="w-14 h-14 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: "var(--olive)", color: "var(--cream)" }}
                     >
-                      {r.name[0]}
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
+                      </svg>
                     </div>
-                    <div>
-                      <div className="font-body font-medium text-xs" style={{ color: "var(--text-main)" }}>
-                        {r.name}
-                      </div>
-                      <div className="font-body text-xs" style={{ color: "var(--text-muted)" }}>{r.topic}</div>
-                    </div>
+                    <span className="font-body text-xs text-center px-4" style={{ color: "var(--text-muted)" }}>
+                      Вставьте скриншот отзыва
+                    </span>
                   </div>
                 </div>
               </FadeUp>
