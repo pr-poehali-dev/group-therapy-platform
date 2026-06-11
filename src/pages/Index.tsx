@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 
 const PHOTOS = {
   hero: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/acae5c0b-c267-4c44-9008-c26a67f4461e.jpg",
-  group: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/a1703a75-34a3-4eab-854c-16848b7e60ae.jpg",
+  group: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/22ff0867-5824-48e8-98ee-21f7a608945d.jpg",
   portrait: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/4fe0e89f-c884-4fe8-822c-ee8f8f18eefd.jpg",
   journal: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/1a2b14d0-a61e-45da-bafe-17e7127b97a7.jpg",
   online: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/fb364811-d06e-4089-9001-135319e8a752.jpg",
