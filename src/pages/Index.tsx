@@ -197,9 +197,8 @@ export default function Index() {
                   className="font-display text-5xl lg:text-6xl xl:text-7xl font-light leading-tight mb-6"
                   style={{ color: "var(--text-main)" }}
                 >
-                  Найдите группу,{" "}
-                  <em className="not-italic" style={{ color: "var(--olive)" }}>где вас</em>{" "}
-                  поймут
+                  Реши свой запрос дешевле, чем у психолога,{" "}
+                  <em className="not-italic" style={{ color: "var(--olive)" }}>и найди новых друзей</em>
                 </h1>
               </FadeUp>
               <FadeUp delay={200}>
@@ -207,7 +206,7 @@ export default function Index() {
                   className="font-body text-lg leading-relaxed mb-8"
                   style={{ color: "var(--text-muted)", maxWidth: "480px" }}
                 >
-                  Подберём небольшую онлайн-группу с психологом под ваш запрос: тревожность, стресс, отношения, выгорание или самооценка.
+                  Мы проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу. Сэкономь 1000 рублей за встречу и найди новых друзей, которые прошли те же проблемы, что и ты.
                 </p>
               </FadeUp>
               <FadeUp delay={300}>
