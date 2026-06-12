@@ -606,9 +606,7 @@ export default function Index() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeUp>
             <div className="section-tag mb-4">стоимость</div>
-            <h2 className="font-display text-4xl lg:text-5xl font-light mb-6" style={{ color: "var(--text-main)" }}>
-              Понятный и доступный формат
-            </h2>
+            <h2 className="font-display lg:text-5xl font-light mb-6 text-3xl" style={{ color: "var(--text-main)" }}>Скидка 20% при покупке от 8 сессий.</h2>
             <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>1 500 ₽ - за онлайн встречу
 2000  ₽ - за офлайн встречу </div>
             <p className="font-body text-base mb-2" style={{ color: "var(--text-muted)" }}></p>
