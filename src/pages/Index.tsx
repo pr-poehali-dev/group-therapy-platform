@@ -138,6 +138,54 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
+function ReviewSlider() {
+  const [current, setCurrent] = useState(0);
+  const total = REVIEW_SCREENSHOTS.length;
+
+  return (
+    <div className="relative">
+      <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: "var(--cream)" }}>
+        <img
+          src={REVIEW_SCREENSHOTS[current].src}
+          alt={`Отзыв ${current + 1}`}
+          className="w-full object-contain"
+          style={{ maxHeight: "600px" }}
+        />
+      </div>
+      <div className="flex items-center justify-between mt-5">
+        <button
+          onClick={() => setCurrent((current - 1 + total) % total)}
+          className="flex items-center justify-center w-11 h-11 rounded-full transition-all hover:-translate-x-0.5"
+          style={{ backgroundColor: "var(--cream)", border: "1px solid var(--beige-dark)", color: "var(--olive)" }}
+        >
+          <Icon name="ChevronLeft" size={20} />
+        </button>
+        <div className="flex gap-2">
+          {REVIEW_SCREENSHOTS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className="rounded-full transition-all"
+              style={{
+                width: i === current ? "24px" : "8px",
+                height: "8px",
+                backgroundColor: i === current ? "var(--olive)" : "var(--beige-dark)",
+              }}
+            />
+          ))}
+        </div>
+        <button
+          onClick={() => setCurrent((current + 1) % total)}
+          className="flex items-center justify-center w-11 h-11 rounded-full transition-all hover:translate-x-0.5"
+          style={{ backgroundColor: "var(--cream)", border: "1px solid var(--beige-dark)", color: "var(--olive)" }}
+        >
+          <Icon name="ChevronRight" size={20} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Index() {
   const [formData, setFormData] = useState({
     name: "",
@@ -556,7 +604,7 @@ export default function Index() {
 
       {/* REVIEWS */}
       <section id="reviews" className="py-20" style={{ backgroundColor: "var(--beige)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-2xl mx-auto px-6">
           <FadeUp>
             <div className="text-center mb-10">
               <div className="section-tag mb-4">отзывы</div>
@@ -578,15 +626,9 @@ export default function Index() {
               </div>
             </div>
           </FadeUp>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {REVIEW_SCREENSHOTS.map((r, i) => (
-              <FadeUp key={r.id} delay={i * 80}>
-                <div className="rounded-2xl overflow-hidden h-80">
-                  <img src={r.src} alt={`Отзыв ${r.id}`} className="w-full h-full object-cover object-top" />
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+          <FadeUp delay={100}>
+            <ReviewSlider />
+          </FadeUp>
         </div>
       </section>
 
