@@ -611,7 +611,7 @@ export default function Index() {
             </h2>
             <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>1 500 ₽ - за онлайн встречу
 2000  ₽ - за офлайн встречу </div>
-            <p className="font-body text-base mb-2" style={{ color: "var(--text-muted)" }}>за одну встречу</p>
+            <p className="font-body text-base mb-2" style={{ color: "var(--text-muted)" }}></p>
             <p
               className="font-body text-sm mb-10 max-w-xl mx-auto"
               style={{ color: "var(--text-muted)" }}
