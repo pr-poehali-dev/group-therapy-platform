@@ -51,10 +51,10 @@ const FOR_WHOM = [
 ];
 
 const REVIEW_SCREENSHOTS = [
-  { id: 1, color: "bg-lavender-light" },
-  { id: 2, color: "bg-blue-light" },
-  { id: 3, color: "bg-beige" },
-  { id: 4, color: "bg-lavender-light" },
+  { id: 1, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/5e60ce87-d53b-4f2d-a15d-8492516202b4.JPG" },
+  { id: 2, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/c56e8f58-e1a9-41bc-897a-df088c475490.JPG" },
+  { id: 3, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/8223818c-a58c-4f3c-a848-70224f62735b.JPG" },
+  { id: 4, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/ba65f3ca-086a-4145-9eff-b5fa2fc212b1.JPG" },
 ];
 
 const FAQS = [
@@ -581,20 +581,8 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {REVIEW_SCREENSHOTS.map((r, i) => (
               <FadeUp key={r.id} delay={i * 80}>
-                <div className={`${r.color} rounded-2xl overflow-hidden h-80 flex items-center justify-center relative group`}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-60">
-                    <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: "var(--olive)", color: "var(--cream)" }}
-                    >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
-                      </svg>
-                    </div>
-                    <span className="font-body text-xs text-center px-4" style={{ color: "var(--text-muted)" }}>
-                      Вставьте скриншот отзыва
-                    </span>
-                  </div>
+                <div className="rounded-2xl overflow-hidden h-80">
+                  <img src={r.src} alt={`Отзыв ${r.id}`} className="w-full h-full object-cover object-top" />
                 </div>
               </FadeUp>
             ))}
