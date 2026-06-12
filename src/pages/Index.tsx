@@ -19,10 +19,10 @@ const PAINS = [
 ];
 
 const STEPS = [
-  { num: "01", title: "Оставьте заявку", text: "Кратко опишите, что вас беспокоит — это займёт 2 минуты" },
-  { num: "02", title: "Уточним запрос", text: "Свяжемся с вами, чтобы лучше понять ситуацию и подобрать подходящий формат" },
+  { num: "01", title: "Оставьте заявку", text: "Это займёт менее 1 минуты" },
+  { num: "02", title: "Уточним запрос", text: "Это важный этап для подбора подходящей вам группы с комфортными людьми" },
   { num: "03", title: "Подберём группу", text: "Найдём группу с близкими темами и небольшим составом участников" },
-  { num: "04", title: "Начните встречи", text: "Присоединяйтесь к онлайн-сессиям в удобное время" },
+  { num: "04", title: "Начните встречи", text: "Присоединяйтесь к онлайн или офлайн сессиям" },
 ];
 
 const DIRECTIONS = [
@@ -36,7 +36,7 @@ const DIRECTIONS = [
 
 const BENEFITS = [
   { icon: "CircleDollarSign", title: "Доступнее индивидуальной", text: "От 1 500 ₽ за встречу вместо 4 000–8 000 ₽" },
-  { icon: "Users", title: "Малые группы", text: "До 8–10 человек — всегда есть место и время" },
+  { icon: "Users", title: "Малые группы", text: "До 8 человек — всегда есть место и время" },
   { icon: "Target", title: "Похожие запросы", text: "Участники подобраны по смежным темам" },
   { icon: "GraduationCap", title: "Профессиональный психолог", text: "Лицензированный специалист ведёт каждую встречу" },
   { icon: "Laptop", title: "Онлайн формат", text: "Из любого города, в удобном месте" },
@@ -189,9 +189,6 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-6 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <FadeUp>
-                <div className="section-tag mb-6">онлайн · групповая терапия</div>
-              </FadeUp>
               <FadeUp delay={100}>
                 <h1
                   className="font-display text-5xl lg:text-6xl xl:text-7xl font-light leading-tight mb-6"
@@ -664,7 +661,7 @@ export default function Index() {
               </em>
             </h2>
             <p className="font-body text-lg mb-10" style={{ color: "rgba(250,247,242,0.75)" }}>
-              Оставьте заявку — мы уточним ваш запрос и предложим подходящий формат
+              Оставьте заявку и мы решим ваш запрос вместе
             </p>
             <a
               href="#form"
@@ -798,7 +795,7 @@ export default function Index() {
                     Удобный способ связи
                   </label>
                   <div className="flex gap-3">
-                    {["telegram", "whatsapp", "phone"].map((method) => (
+                    {["telegram", "max", "phone"].map((method) => (
                       <button
                         key={method}
                         type="button"
@@ -812,7 +809,7 @@ export default function Index() {
                           border: "1px solid var(--beige-dark)",
                         }}
                       >
-                        {method === "telegram" ? "Telegram" : method === "whatsapp" ? "WhatsApp" : "Звонок"}
+                        {method === "telegram" ? "Telegram" : method === "max" ? "MAX" : "Звонок"}
                       </button>
                     ))}
                   </div>
