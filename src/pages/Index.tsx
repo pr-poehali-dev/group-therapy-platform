@@ -248,9 +248,8 @@ export default function Index() {
                   className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                   style={{ color: "var(--text-main)" }}
                 >
-                  Психолог на{" "}
-                  <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>,{" "}
-                  чем 1 на 1
+                  Психолог примерно на{" "}
+                  <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>
                 </h1>
               </FadeUp>
               <FadeUp delay={200}>
@@ -298,9 +297,8 @@ export default function Index() {
                 className="font-display text-5xl font-light leading-tight"
                 style={{ color: "var(--text-main)" }}
               >
-                Психолог на{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>,{" "}
-                чем 1 на 1
+                Психолог примерно на{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>
               </h1>
             </FadeUp>
             <FadeUp delay={150} className="relative">
@@ -441,35 +439,91 @@ export default function Index() {
       </section>
 
       {/* PHOTO GALLERY */}
-      <section className="py-4 overflow-hidden" style={{ backgroundColor: "var(--beige)" }}>
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <FadeUp>
-            <div className="text-center mb-10">
-              <div className="section-tag mb-3">атмосфера</div>
-              <h2 className="font-display text-3xl font-light" style={{ color: "var(--text-main)" }}>
-                Тёплое пространство для настоящего разговора
-              </h2>
-            </div>
-          </FadeUp>
-          <FadeUp delay={100}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[PHOTOS.hero, PHOTOS.group, PHOTOS.portrait, PHOTOS.online, PHOTOS.journal, PHOTOS.hero].map((src, i) => (
+      {(() => {
+        const galleryPhotos = [
+          [PHOTOS.hero, PHOTOS.group],
+          [PHOTOS.portrait, PHOTOS.online],
+          [PHOTOS.journal, PHOTOS.hero],
+        ];
+        const GallerySlider = () => {
+          const [slide, setSlide] = useState(0);
+          const startX = useRef(0);
+          const onTouchStart = (e: React.TouchEvent) => { startX.current = e.touches[0].clientX; };
+          const onTouchEnd = (e: React.TouchEvent) => {
+            const diff = startX.current - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) setSlide(s => Math.max(0, Math.min(galleryPhotos.length - 1, s + (diff > 0 ? 1 : -1))));
+          };
+          return (
+            <div>
+              <div
+                className="overflow-hidden rounded-2xl"
+                onTouchStart={onTouchStart}
+                onTouchEnd={onTouchEnd}
+              >
                 <div
-                  key={i}
-                  className="rounded-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.02]"
-                  style={{ aspectRatio: i % 3 === 1 ? "3/4" : "4/3" }}
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${slide * 100}%)` }}
                 >
-                  <img
-                    src={src}
-                    alt={`Групповая терапия ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
+                  {galleryPhotos.map((pair, i) => (
+                    <div key={i} className="min-w-full grid grid-cols-2 gap-3">
+                      {pair.map((src, j) => (
+                        <div key={j} className="rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                          <img src={src} alt={`Атмосфера ${i * 2 + j + 1}`} className="w-full h-full object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <button
+                  onClick={() => setSlide(s => Math.max(0, s - 1))}
+                  disabled={slide === 0}
+                  className="w-10 h-10 rounded-full border flex items-center justify-center transition-opacity disabled:opacity-30"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <Icon name="ChevronLeft" size={18} />
+                </button>
+                <div className="flex gap-2">
+                  {galleryPhotos.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSlide(i)}
+                      className="w-2 h-2 rounded-full transition-all"
+                      style={{ backgroundColor: i === slide ? "var(--text-main)" : "var(--border)" }}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={() => setSlide(s => Math.min(galleryPhotos.length - 1, s + 1))}
+                  disabled={slide === galleryPhotos.length - 1}
+                  className="w-10 h-10 rounded-full border flex items-center justify-center transition-opacity disabled:opacity-30"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <Icon name="ChevronRight" size={18} />
+                </button>
+              </div>
             </div>
-          </FadeUp>
-        </div>
-      </section>
+          );
+        };
+        return (
+          <section className="py-4 overflow-hidden" style={{ backgroundColor: "var(--beige)" }}>
+            <div className="max-w-6xl mx-auto px-6 py-16">
+              <FadeUp>
+                <div className="text-center mb-10">
+                  <div className="section-tag mb-3">атмосфера</div>
+                  <h2 className="font-display text-3xl font-light" style={{ color: "var(--text-main)" }}>
+                    Тёплое пространство для настоящего разговора
+                  </h2>
+                </div>
+              </FadeUp>
+              <FadeUp delay={100}>
+                <GallerySlider />
+              </FadeUp>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* HOW IT WORKS */}
       <section id="how" className="py-20">
@@ -637,6 +691,21 @@ export default function Index() {
           </section>
         );
       })()}
+
+      {/* ACCENT DIVIDER */}
+      <section className="py-16">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <FadeUp>
+            <p
+              className="font-display text-3xl lg:text-4xl font-light leading-snug"
+              style={{ color: "var(--text-main)" }}
+            >
+              Выберите направление —<br />
+              <em className="not-italic" style={{ color: "var(--olive)" }}>мы подберём подходящую группу</em>
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
       {/* DIRECTIONS */}
       <section id="directions" className="py-28" style={{ backgroundColor: "var(--beige)" }}>
