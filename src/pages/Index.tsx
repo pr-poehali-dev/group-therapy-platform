@@ -254,6 +254,7 @@ export default function Index() {
                 </h1>
               </FadeUp>
               <FadeUp delay={200}>
+                <div className="border-t my-8" style={{ borderColor: "var(--border)" }} />
                 <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
                   Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу.
                 </p>
