@@ -26,9 +26,7 @@ const DIRECTIONS = [
   { emoji: "🌿", title: "Тревожность и стресс", desc: "Группа, где учатся замечать триггеры и находить опору" },
   { emoji: "🔥", title: "Выгорание", desc: "Группа для тех, кто хочет восстановить ресурс и вернуть смысл в работу" },
   { emoji: "💬", title: "Отношения", desc: "Группа для разбора повторяющихся паттернов в отношениях" },
-  { emoji: "🪞", title: "Самооценка", desc: "Группа, где выстраивают устойчивое отношение к себе" },
   { emoji: "💼", title: "Карьера и работа", desc: "Группа для тех, кто ищет направление и справляется с неудовлетворённостью" },
-  { emoji: "🌙", title: "Одиночество", desc: "Группа, где можно почувствовать связь и принадлежность" },
 ];
 
 const BENEFITS = [
@@ -242,7 +240,7 @@ export default function Index() {
       <section className="pt-16 min-h-screen flex items-center overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
+            <div className="order-1 lg:order-1">
               <FadeUp delay={100}>
                 <h1
                   className="font-display text-5xl lg:text-6xl xl:text-7xl font-light leading-tight mb-6"
@@ -253,6 +251,48 @@ export default function Index() {
                   чем 1 на 1
                 </h1>
               </FadeUp>
+            </div>
+
+            <FadeUp delay={150} className="relative order-2 lg:order-2">
+              <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                <img
+                  src={PHOTOS.hero}
+                  alt="Групповая терапия онлайн"
+                  className="w-full h-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }}
+                />
+              </div>
+              <div
+                className="absolute -bottom-4 -left-4 lg:-left-10 card-warm flex items-center gap-3"
+                style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--sage)" }}
+                >
+                  <Icon name="Heart" size={18} style={{ color: "white" }} />
+                </div>
+                <div>
+                  <div className="font-body font-semibold text-sm" style={{ color: "var(--text-main)" }}>
+                    87 групп запущено
+                  </div>
+                  <div className="font-body text-xs" style={{ color: "var(--text-muted)" }}>с 2022 года</div>
+                </div>
+              </div>
+              <div
+                className="absolute -top-4 -right-4 lg:-right-6 rounded-2xl px-4 py-2.5"
+                style={{ backgroundColor: "var(--lavender)", boxShadow: "0 8px 24px rgba(200,192,220,0.4)" }}
+              >
+                <div className="font-body text-sm font-medium" style={{ color: "#4a3f6e" }}>⭐ 4.9 / 5</div>
+              </div>
+            </FadeUp>
+
+            <div className="order-3 lg:order-1 lg:col-start-1 lg:row-start-1 lg:hidden">
+            </div>
+            <div className="order-3 lg:hidden">
               <FadeUp delay={200}>
                 <p
                   className="font-body text-lg leading-relaxed mb-8"
@@ -292,42 +332,45 @@ export default function Index() {
               </FadeUp>
             </div>
 
-            <FadeUp delay={150} className="relative">
-              <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-                <img
-                  src={PHOTOS.hero}
-                  alt="Групповая терапия онлайн"
-                  className="w-full h-full object-cover"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }}
-                />
-              </div>
-              <div
-                className="absolute -bottom-4 -left-4 lg:-left-10 card-warm flex items-center gap-3"
-                style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
-              >
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "var(--sage)" }}
+            <div className="hidden lg:block order-1">
+              <FadeUp delay={200}>
+                <p
+                  className="font-body text-lg leading-relaxed mb-8"
+                  style={{ color: "var(--text-muted)", maxWidth: "480px" }}
                 >
-                  <Icon name="Heart" size={18} style={{ color: "white" }} />
+                  Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу. А ещё здесь ты найдёшь новых друзей, которые прошли те же проблемы, что и ты.
+                </p>
+              </FadeUp>
+              <FadeUp delay={300}>
+                <div className="flex flex-wrap gap-3 mb-10">
+                  <a href="#form" className="btn-primary">
+                    Подобрать группу
+                    <Icon name="ArrowRight" size={16} />
+                  </a>
+                  <a href="#how" className="btn-outline">
+                    Как это работает
+                  </a>
                 </div>
-                <div>
-                  <div className="font-body font-semibold text-sm" style={{ color: "var(--text-main)" }}>
-                    87 групп запущено
-                  </div>
-                  <div className="font-body text-xs" style={{ color: "var(--text-muted)" }}>с 2022 года</div>
+              </FadeUp>
+              <FadeUp delay={400}>
+                <div className="flex flex-wrap gap-6">
+                  {[
+                    { icon: "MapPin", text: "Офлайн и онлайн в Москве" },
+                    { icon: "Users", text: "Группы до 10 человек" },
+                    { icon: "Sparkles", text: "Подбор под запрос" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <span style={{ color: "var(--olive)" }}>
+                        <Icon name={item.icon} size={15} />
+                      </span>
+                      <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div
-                className="absolute -top-4 -right-4 lg:-right-6 rounded-2xl px-4 py-2.5"
-                style={{ backgroundColor: "var(--lavender)", boxShadow: "0 8px 24px rgba(200,192,220,0.4)" }}
-              >
-                <div className="font-body text-sm font-medium" style={{ color: "#4a3f6e" }}>⭐ 4.9 / 5</div>
-              </div>
-            </FadeUp>
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>
@@ -498,36 +541,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* DIRECTIONS */}
-      <section id="directions" className="py-20" style={{ backgroundColor: "var(--beige)" }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <FadeUp>
-            <div className="text-center mb-14">
-              <div className="section-tag mb-4">направления групп</div>
-              <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
-                Найдите своё
-              </h2>
-            </div>
-          </FadeUp>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {DIRECTIONS.map((dir, i) => (
-              <FadeUp key={i} delay={i * 80}>
-                <div className="card-warm group cursor-pointer">
-                  <div className="text-3xl mb-4">{dir.emoji}</div>
-                  <h3 className="font-display text-xl font-medium mb-2" style={{ color: "var(--text-main)" }}>
-                    {dir.title}
-                  </h3>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                    {dir.desc}
-                  </p>
-
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PSYCHOLOGISTS */}
       {(() => {
         const psychologists = [
@@ -655,6 +668,35 @@ export default function Index() {
           </section>
         );
       })()}
+
+      {/* DIRECTIONS */}
+      <section id="directions" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeUp>
+            <div className="text-center mb-14">
+              <div className="section-tag mb-4">направления групп</div>
+              <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
+                Найдите своё
+              </h2>
+            </div>
+          </FadeUp>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {DIRECTIONS.map((dir, i) => (
+              <FadeUp key={i} delay={i * 80}>
+                <div className="card-warm group cursor-pointer">
+                  <div className="text-3xl mb-4">{dir.emoji}</div>
+                  <h3 className="font-display text-xl font-medium mb-2" style={{ color: "var(--text-main)" }}>
+                    {dir.title}
+                  </h3>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                    {dir.desc}
+                  </p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* BENEFITS */}
       <section className="py-20">
