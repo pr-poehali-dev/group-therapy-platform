@@ -417,7 +417,6 @@ export default function Index() {
                   {[
                     "Слышать истории других — и узнавать в них себя",
                     "Получать обратную связь в безопасном пространстве",
-                    "Замечать прогресс — свой и других",
                   ].map((text, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div
@@ -511,7 +510,7 @@ export default function Index() {
             <div className="max-w-6xl mx-auto px-6 py-16">
               <FadeUp>
                 <div className="text-center mb-10">
-                  <div className="section-tag mb-3">атмосфера</div>
+                  <div className="section-tag mb-3">атмосфера живых встреч</div>
                   <h2 className="font-display text-3xl font-light" style={{ color: "var(--text-main)" }}>
                     Тёплое пространство для настоящего разговора
                   </h2>
@@ -519,6 +518,11 @@ export default function Index() {
               </FadeUp>
               <FadeUp delay={100}>
                 <GallerySlider />
+              </FadeUp>
+              <FadeUp delay={200}>
+                <p className="text-center font-body text-sm mt-6" style={{ color: "var(--text-muted)" }}>
+                  Возможен и онлайн формат
+                </p>
               </FadeUp>
             </div>
           </section>
