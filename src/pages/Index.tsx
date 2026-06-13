@@ -12,10 +12,7 @@ const PHOTOS = {
 const PAINS = [
   { icon: "Wind", text: "Тревога не отпускает", color: "bg-lavender-light" },
   { icon: "BatteryLow", text: "Работа забирает все силы", color: "bg-blue-light" },
-  { icon: "RefreshCw", text: "Ищете более экономный формат психологической помощи", color: "bg-beige" },
   { icon: "Wallet", text: "Индивидуальная терапия кажется дорогой", color: "bg-blue-light" },
-  { icon: "Heart", text: "Хочется поддержки, но сложно открыться", color: "bg-lavender-light" },
-  { icon: "CloudRain", text: "Ощущение, что справляешься в одиночку", color: "bg-beige" },
 ];
 
 const STEPS = [
@@ -523,13 +520,7 @@ export default function Index() {
                   <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                     {dir.desc}
                   </p>
-                  <div
-                    className="mt-4 flex items-center gap-1.5 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ color: "var(--olive)" }}
-                  >
-                    <span>Подробнее</span>
-                    <Icon name="ArrowRight" size={14} />
-                  </div>
+
                 </div>
               </FadeUp>
             ))}
