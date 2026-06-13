@@ -540,6 +540,50 @@ export default function Index() {
         </div>
       </section>
 
+      {/* PSYCHOLOGISTS */}
+      {(() => {
+        const psychologists = [
+          {
+            name: "Дмитрий",
+            education: "Московский институт психоанализа",
+            experience: "4 года в профессии",
+            reviews: "Сотни положительных отзывов",
+            photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f0514b42-9bb6-4eb2-9fff-c19cd4c29576.PNG",
+          },
+        ];
+        return (
+          <section className="py-20" style={{ backgroundColor: "var(--beige)" }}>
+            <div className="max-w-6xl mx-auto px-6">
+              <FadeUp>
+                <div className="text-center mb-14">
+                  <div className="section-tag mb-4">специалисты</div>
+                  <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
+                    {psychologists.length === 1 ? "Наш психолог" : "Наши психологи"}
+                  </h2>
+                </div>
+              </FadeUp>
+              <div className={`grid gap-10 ${psychologists.length === 1 ? "max-w-sm mx-auto" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+                {psychologists.map((p, i) => (
+                  <FadeUp key={i} delay={i * 100}>
+                    <div className="card-warm text-center">
+                      <div className="mb-6 mx-auto w-40 h-40 rounded-full overflow-hidden">
+                        <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top" />
+                      </div>
+                      <h3 className="font-display text-2xl font-light mb-4" style={{ color: "var(--text-main)" }}>{p.name}</h3>
+                      <ul className="space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                        <li>🎓 {p.education}</li>
+                        <li>💼 {p.experience}</li>
+                        <li>⭐ {p.reviews}</li>
+                      </ul>
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* BENEFITS */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
