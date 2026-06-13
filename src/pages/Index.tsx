@@ -552,33 +552,70 @@ export default function Index() {
           },
         ];
         return (
-          <section className="py-20" style={{ backgroundColor: "var(--beige)" }}>
+          <section className="py-24" style={{ backgroundColor: "var(--beige)" }}>
             <div className="max-w-6xl mx-auto px-6">
               <FadeUp>
-                <div className="text-center mb-14">
+                <div className="text-center mb-16">
                   <div className="section-tag mb-4">специалисты</div>
                   <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
                     {psychologists.length === 1 ? "Наш психолог" : "Наши психологи"}
                   </h2>
                 </div>
               </FadeUp>
-              <div className={`grid gap-10 ${psychologists.length === 1 ? "max-w-sm mx-auto" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
-                {psychologists.map((p, i) => (
-                  <FadeUp key={i} delay={i * 100}>
-                    <div className="card-warm text-center">
-                      <div className="mb-6 mx-auto w-40 h-40 rounded-full overflow-hidden">
-                        <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top" />
+
+              {psychologists.length === 1 ? (
+                <FadeUp delay={100}>
+                  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-4xl mx-auto">
+                    <div className="relative">
+                      <div className="aspect-[3/4] rounded-2xl overflow-hidden">
+                        <img
+                          src={psychologists[0].photo}
+                          alt={psychologists[0].name}
+                          className="w-full h-full object-cover object-top"
+                        />
                       </div>
-                      <h3 className="font-display text-2xl font-light mb-4" style={{ color: "var(--text-main)" }}>{p.name}</h3>
-                      <ul className="space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                        <li>🎓 {p.education}</li>
-                        <li>💼 {p.experience}</li>
-                        <li>⭐ {p.reviews}</li>
-                      </ul>
                     </div>
-                  </FadeUp>
-                ))}
-              </div>
+                    <div>
+                      <p className="section-tag mb-4">психолог</p>
+                      <h3 className="font-display text-5xl lg:text-6xl font-light mb-8" style={{ color: "var(--text-main)" }}>
+                        {psychologists[0].name}
+                      </h3>
+                      <div className="space-y-6">
+                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Образование</p>
+                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].education}</p>
+                        </div>
+                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Опыт</p>
+                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].experience}</p>
+                        </div>
+                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Репутация</p>
+                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].reviews}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </FadeUp>
+              ) : (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                  {psychologists.map((p, i) => (
+                    <FadeUp key={i} delay={i * 100}>
+                      <div className="card-warm text-center">
+                        <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6">
+                          <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top" />
+                        </div>
+                        <h3 className="font-display text-2xl font-light mb-4" style={{ color: "var(--text-main)" }}>{p.name}</h3>
+                        <div className="space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
+                          <p>{p.education}</p>
+                          <p>{p.experience}</p>
+                          <p>{p.reviews}</p>
+                        </div>
+                      </div>
+                    </FadeUp>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         );
