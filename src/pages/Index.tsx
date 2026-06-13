@@ -550,6 +550,13 @@ export default function Index() {
             reviews: "Сотни положительных отзывов",
             photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f0514b42-9bb6-4eb2-9fff-c19cd4c29576.PNG",
           },
+          {
+            name: "Наталья",
+            education: "Санкт-Петербургский государственный университет",
+            experience: "16 лет в профессии",
+            reviews: "Сотни положительных отзывов",
+            photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/82517d50-f9f9-4683-994d-bc65bc98e8f8.PNG",
+          },
         ];
         return (
           <section className="py-24" style={{ backgroundColor: "var(--beige)" }}>
