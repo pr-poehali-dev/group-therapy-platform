@@ -255,7 +255,7 @@ export default function Index() {
               </FadeUp>
               <FadeUp delay={200}>
                 <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                  Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу. А ещё здесь ты найдёшь новых друзей, которые прошли те же проблемы, что и ты.
+                  Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу.
                 </p>
               </FadeUp>
               <FadeUp delay={300}>
@@ -287,18 +287,6 @@ export default function Index() {
                 <img src={PHOTOS.hero} alt="Групповая терапия онлайн" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }} />
               </div>
-              <div className="absolute -bottom-4 -left-10 card-warm flex items-center gap-3" style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--sage)" }}>
-                  <Icon name="Heart" size={18} style={{ color: "white" }} />
-                </div>
-                <div>
-                  <div className="font-body font-semibold text-sm" style={{ color: "var(--text-main)" }}>87 групп запущено</div>
-                  <div className="font-body text-xs" style={{ color: "var(--text-muted)" }}>с 2022 года</div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-6 rounded-2xl px-4 py-2.5" style={{ backgroundColor: "var(--lavender)", boxShadow: "0 8px 24px rgba(200,192,220,0.4)" }}>
-                <div className="font-body text-sm font-medium" style={{ color: "#4a3f6e" }}>⭐ 4.9 / 5</div>
-              </div>
             </FadeUp>
           </div>
 
@@ -319,23 +307,11 @@ export default function Index() {
                 <img src={PHOTOS.hero} alt="Групповая терапия онлайн" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }} />
               </div>
-              <div className="absolute -bottom-4 -left-4 card-warm flex items-center gap-3" style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "var(--sage)" }}>
-                  <Icon name="Heart" size={18} style={{ color: "white" }} />
-                </div>
-                <div>
-                  <div className="font-body font-semibold text-sm" style={{ color: "var(--text-main)" }}>87 групп запущено</div>
-                  <div className="font-body text-xs" style={{ color: "var(--text-muted)" }}>с 2022 года</div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 rounded-2xl px-4 py-2.5" style={{ backgroundColor: "var(--lavender)", boxShadow: "0 8px 24px rgba(200,192,220,0.4)" }}>
-                <div className="font-body text-sm font-medium" style={{ color: "#4a3f6e" }}>⭐ 4.9 / 5</div>
-              </div>
             </FadeUp>
             <div className="pt-4">
               <FadeUp delay={200}>
                 <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                  Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу. А ещё здесь ты найдёшь новых друзей, которые прошли те же проблемы, что и ты.
+                  Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу.
                 </p>
               </FadeUp>
               <FadeUp delay={300}>
