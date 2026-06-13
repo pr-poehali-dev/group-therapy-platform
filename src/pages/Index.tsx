@@ -412,26 +412,7 @@ export default function Index() {
               <FadeUp delay={200}>
                 <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>Групповая терапия — это встречи с психологом и 5-8 людьми, которые проживают те же проблемы что и вы. Психолог ведет групповую динамику.  Изучая как другие справляются с похожими трудностями вам будет становится легче и вы быстрее решите свой запрос.</p>
               </FadeUp>
-              <FadeUp delay={300}>
-                <div className="space-y-4">
-                  {[
-                    "Слышать истории других — и узнавать в них себя",
-                    "Получать обратную связь в безопасном пространстве",
-                  ].map((text, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: "var(--olive)" }}
-                      >
-                        <Icon name="Check" size={11} style={{ color: "var(--cream)" }} />
-                      </div>
-                      <span className="font-body text-sm leading-relaxed" style={{ color: "var(--text-main)" }}>
-                        {text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </FadeUp>
+
             </div>
           </div>
         </div>
