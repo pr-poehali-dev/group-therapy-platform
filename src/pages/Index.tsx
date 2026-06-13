@@ -420,11 +420,7 @@ export default function Index() {
 
       {/* PHOTO GALLERY */}
       {(() => {
-        const galleryPhotos = [
-          [PHOTOS.hero, PHOTOS.group],
-          [PHOTOS.portrait, PHOTOS.online],
-          [PHOTOS.journal, PHOTOS.hero],
-        ];
+        const galleryPhotos = [PHOTOS.hero, PHOTOS.group, PHOTOS.portrait, PHOTOS.online, PHOTOS.journal];
         const GallerySlider = () => {
           const [slide, setSlide] = useState(0);
           const startX = useRef(0);
@@ -444,13 +440,9 @@ export default function Index() {
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${slide * 100}%)` }}
                 >
-                  {galleryPhotos.map((pair, i) => (
-                    <div key={i} className="min-w-full grid grid-cols-2 gap-3">
-                      {pair.map((src, j) => (
-                        <div key={j} className="rounded-2xl overflow-hidden" style={{ aspectRatio: "3/4" }}>
-                          <img src={src} alt={`Атмосфера ${i * 2 + j + 1}`} className="w-full h-full object-cover" />
-                        </div>
-                      ))}
+                  {galleryPhotos.map((src, i) => (
+                    <div key={i} className="min-w-full rounded-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                      <img src={src} alt={`Атмосфера ${i + 1}`} className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>
