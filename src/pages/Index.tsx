@@ -254,9 +254,9 @@ export default function Index() {
                   className="font-display text-5xl lg:text-6xl xl:text-7xl font-light leading-tight mb-6"
                   style={{ color: "var(--text-main)" }}
                 >
-                  Услуги психолога на{" "}
-                  <em className="not-italic" style={{ color: "var(--olive)" }}>до 41% дешевле</em>,{" "}
-                  чем индивидуально
+                  Психолог на{" "}
+                  <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>,{" "}
+                  чем 1 на 1
                 </h1>
               </FadeUp>
               <FadeUp delay={200}>
@@ -558,6 +558,97 @@ export default function Index() {
             photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/82517d50-f9f9-4683-994d-bc65bc98e8f8.PNG",
           },
         ];
+
+        const PsychSlider = () => {
+          const [active, setActive] = useState(0);
+          const trackRef = useRef<HTMLDivElement>(null);
+          const startX = useRef(0);
+          const isDragging = useRef(false);
+
+          const goTo = (idx: number) => setActive(Math.max(0, Math.min(psychologists.length - 1, idx)));
+
+          const onTouchStart = (e: React.TouchEvent) => { startX.current = e.touches[0].clientX; };
+          const onTouchEnd = (e: React.TouchEvent) => {
+            const diff = startX.current - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) goTo(diff > 0 ? active + 1 : active - 1);
+          };
+          const onMouseDown = (e: React.MouseEvent) => { isDragging.current = true; startX.current = e.clientX; };
+          const onMouseUp = (e: React.MouseEvent) => {
+            if (!isDragging.current) return;
+            isDragging.current = false;
+            const diff = startX.current - e.clientX;
+            if (Math.abs(diff) > 40) goTo(diff > 0 ? active + 1 : active - 1);
+          };
+
+          const p = psychologists[active];
+          return (
+            <div>
+              <div
+                ref={trackRef}
+                className="select-none cursor-grab active:cursor-grabbing"
+                onTouchStart={onTouchStart}
+                onTouchEnd={onTouchEnd}
+                onMouseDown={onMouseDown}
+                onMouseUp={onMouseUp}
+              >
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-4xl mx-auto">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden">
+                    <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top transition-all duration-500" />
+                  </div>
+                  <div>
+                    <p className="section-tag mb-4">психолог</p>
+                    <h3 className="font-display text-5xl lg:text-6xl font-light mb-8" style={{ color: "var(--text-main)" }}>
+                      {p.name}
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Образование</p>
+                        <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.education}</p>
+                      </div>
+                      <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Опыт</p>
+                        <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.experience}</p>
+                      </div>
+                      <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Репутация</p>
+                        <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.reviews}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 mt-10">
+                      <button
+                        onClick={() => goTo(active - 1)}
+                        disabled={active === 0}
+                        className="w-10 h-10 rounded-full border flex items-center justify-center transition-opacity disabled:opacity-30"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        <Icon name="ChevronLeft" size={18} />
+                      </button>
+                      <div className="flex gap-2">
+                        {psychologists.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => goTo(i)}
+                            className="w-2 h-2 rounded-full transition-all"
+                            style={{ backgroundColor: i === active ? "var(--text-main)" : "var(--border)" }}
+                          />
+                        ))}
+                      </div>
+                      <button
+                        onClick={() => goTo(active + 1)}
+                        disabled={active === psychologists.length - 1}
+                        className="w-10 h-10 rounded-full border flex items-center justify-center transition-opacity disabled:opacity-30"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        <Icon name="ChevronRight" size={18} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        };
+
         return (
           <section className="py-24" style={{ backgroundColor: "var(--beige)" }}>
             <div className="max-w-6xl mx-auto px-6">
@@ -565,64 +656,13 @@ export default function Index() {
                 <div className="text-center mb-16">
                   <div className="section-tag mb-4">специалисты</div>
                   <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
-                    {psychologists.length === 1 ? "Наш психолог" : "Наши психологи"}
+                    Наши психологи
                   </h2>
                 </div>
               </FadeUp>
-
-              {psychologists.length === 1 ? (
-                <FadeUp delay={100}>
-                  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-4xl mx-auto">
-                    <div className="relative">
-                      <div className="aspect-[3/4] rounded-2xl overflow-hidden">
-                        <img
-                          src={psychologists[0].photo}
-                          alt={psychologists[0].name}
-                          className="w-full h-full object-cover object-top"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="section-tag mb-4">психолог</p>
-                      <h3 className="font-display text-5xl lg:text-6xl font-light mb-8" style={{ color: "var(--text-main)" }}>
-                        {psychologists[0].name}
-                      </h3>
-                      <div className="space-y-6">
-                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
-                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Образование</p>
-                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].education}</p>
-                        </div>
-                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
-                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Опыт</p>
-                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].experience}</p>
-                        </div>
-                        <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
-                          <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Репутация</p>
-                          <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{psychologists[0].reviews}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </FadeUp>
-              ) : (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                  {psychologists.map((p, i) => (
-                    <FadeUp key={i} delay={i * 100}>
-                      <div className="card-warm text-center">
-                        <div className="aspect-[3/4] rounded-xl overflow-hidden mb-6">
-                          <img src={p.photo} alt={p.name} className="w-full h-full object-cover object-top" />
-                        </div>
-                        <h3 className="font-display text-2xl font-light mb-4" style={{ color: "var(--text-main)" }}>{p.name}</h3>
-                        <div className="space-y-2 text-sm" style={{ color: "var(--text-muted)" }}>
-                          <p>{p.education}</p>
-                          <p>{p.experience}</p>
-                          <p>{p.reviews}</p>
-                        </div>
-                      </div>
-                    </FadeUp>
-                  ))}
-                </div>
-              )}
+              <FadeUp delay={100}>
+                <PsychSlider />
+              </FadeUp>
             </div>
           </section>
         );
