@@ -548,14 +548,14 @@ export default function Index() {
             name: "Дмитрий",
             education: "Московский институт психоанализа",
             experience: "4 года в профессии",
-            reviews: "Сотни положительных отзывов",
+            topics: "тревожностью, выгоранием, самооценкой, отношениями",
             photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f0514b42-9bb6-4eb2-9fff-c19cd4c29576.PNG",
           },
           {
             name: "Наталья",
             education: "Санкт-Петербургский государственный университет",
             experience: "16 лет в профессии",
-            reviews: "Сотни положительных отзывов",
+            topics: "тревожностью, выгоранием, самооценкой, отношениями",
             photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/82517d50-f9f9-4683-994d-bc65bc98e8f8.PNG",
           },
         ];
@@ -611,8 +611,8 @@ export default function Index() {
                         <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.experience}</p>
                       </div>
                       <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
-                        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Репутация</p>
-                        <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.reviews}</p>
+                        <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Работает с</p>
+                        <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.topics}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 mt-10">
