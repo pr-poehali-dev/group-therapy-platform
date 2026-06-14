@@ -759,24 +759,7 @@ export default function Index() {
                 <div className="rounded-3xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
                   <img src={PHOTOS.online} alt="Онлайн встреча группы" className="w-full h-full object-cover" />
                 </div>
-                <div className="rounded-2xl p-6" style={{ backgroundColor: "var(--lavender-light)" }}>
-                  <h3 className="font-display text-xl font-medium mb-3" style={{ color: "var(--text-main)" }}>
-                    Кому подходит?
-                  </h3>
-                  <div className="space-y-2.5">
-                    {FOR_WHOM.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2.5">
-                        <div
-                          className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: "var(--olive)" }}
-                        />
-                        <span className="font-body text-sm leading-relaxed" style={{ color: "var(--text-main)" }}>
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
               </div>
             </FadeUp>
           </div>
@@ -819,8 +802,9 @@ export default function Index() {
           <FadeUp>
             <div className="section-tag mb-4">стоимость</div>
             <h2 className="font-display lg:text-5xl font-light mb-6 text-3xl" style={{ color: "var(--text-main)" }}>Скидка 20% при покупке от 8 сессий.</h2>
-            <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>1 500 ₽ - за онлайн встречу
-2000  ₽ - за офлайн встречу </div>
+            <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>1 500 ₽ — за онлайн встречу</div>
+            <div className="mb-4" />
+            <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>2 000 ₽ — за офлайн встречу</div>
             <p className="font-body text-base mb-2" style={{ color: "var(--text-muted)" }}></p>
             <p
               className="font-body text-sm mb-10 max-w-xl mx-auto"
