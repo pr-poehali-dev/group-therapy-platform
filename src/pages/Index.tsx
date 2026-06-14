@@ -248,8 +248,8 @@ export default function Index() {
                   className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                   style={{ color: "var(--text-main)" }}
                 >
-                  Психолог примерно на{" "}
-                  <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>
+                  Онлайн и офлайн-группы с психологом{" "}
+                  <em className="not-italic" style={{ color: "var(--olive)" }}>от 1 500 ₽ за встречу</em>
                 </h1>
               </FadeUp>
               <FadeUp delay={200}>
@@ -297,8 +297,8 @@ export default function Index() {
                 className="font-display text-5xl font-light leading-tight"
                 style={{ color: "var(--text-main)" }}
               >
-                Психолог примерно на{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>41% дешевле</em>
+                Онлайн и офлайн-группы с психологом{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>от 1 500 ₽ за встречу</em>
               </h1>
             </FadeUp>
             <FadeUp delay={150} className="relative">
@@ -410,7 +410,7 @@ export default function Index() {
                 </h2>
               </FadeUp>
               <FadeUp delay={200}>
-                <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>Групповая терапия — это встречи с психологом и 5-8 людьми, которые проживают те же проблемы что и вы. Психолог ведет групповую динамику.  Изучая как другие справляются с похожими трудностями вам будет становится легче и вы быстрее решите свой запрос.</p>
+                <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>Групповая терапия — это встречи с психологом и 5-8 людьми, которые проживают те же трудности что и вы. Психолог следит за безопасностью, структурой встречи и помогает группе двигаться бережно. Изучая как другие справляются с похожими трудностями вам будет становиться легче и вы быстрее решите свой запрос. На первой встрече не обязательно говорить о личном — можно сначала просто слушать.</p>
               </FadeUp>
 
             </div>
