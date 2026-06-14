@@ -183,6 +183,7 @@ export default function Index() {
     name: "",
     contact: "",
     topic: "",
+    direction: "",
     contactMethod: "telegram",
     comment: "",
   });
@@ -698,7 +699,13 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {DIRECTIONS.map((dir, i) => (
               <FadeUp key={i} delay={i * 80}>
-                <div className="card-warm p-8">
+                <div
+                  className="card-warm p-8 cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+                  onClick={() => {
+                    setFormData(f => ({ ...f, direction: dir.title }));
+                    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
                   <div className="text-4xl mb-6">{dir.emoji}</div>
                   <h3 className="font-display text-2xl font-light mb-3" style={{ color: "var(--text-main)" }}>
                     {dir.title}
@@ -958,7 +965,28 @@ export default function Index() {
                   </div>
                 </div>
 
-
+                <div>
+                  <label className="block font-body text-sm font-medium mb-2" style={{ color: "var(--text-main)" }}>
+                    Интересующая группа
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {DIRECTIONS.map((dir) => (
+                      <button
+                        key={dir.title}
+                        type="button"
+                        onClick={() => setFormData(f => ({ ...f, direction: f.direction === dir.title ? "" : dir.title }))}
+                        className="py-2.5 px-3 rounded-xl font-body text-sm text-left transition-all"
+                        style={{
+                          backgroundColor: formData.direction === dir.title ? "var(--olive)" : "var(--cream)",
+                          color: formData.direction === dir.title ? "var(--cream)" : "var(--text-muted)",
+                          border: "1px solid var(--beige-dark)",
+                        }}
+                      >
+                        {dir.emoji} {dir.title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
                 <div>
                   <label
