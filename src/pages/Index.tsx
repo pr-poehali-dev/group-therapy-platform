@@ -56,7 +56,6 @@ export default function Index() {
       <PainSection />
       <SolutionSection />
       <PsychologistsSection />
-      <PhotoGallerySection />
       <HowItWorksSection />
       <AccentDividerSection />
       <DirectionsSection onDirectionClick={handleDirectionClick} />
