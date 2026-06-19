@@ -13,6 +13,15 @@ type FormSectionProps = {
 };
 
 export function FormSection({ formData, setFormData, submitted, handleSubmit, privacyOpen, setPrivacyOpen }: FormSectionProps) {
+  const phoneDigits = formData.contact.replace(/\D/g, "");
+  const phoneValid = phoneDigits.length >= 10;
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!phoneValid) return;
+    handleSubmit(e);
+  };
+
   return (
     <>
       {/* FORM */}
@@ -46,7 +55,7 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
               </div>
             ) : (
               <form
-                onSubmit={handleSubmit}
+                onSubmit={onSubmit}
                 className="space-y-5 rounded-3xl p-8"
                 style={{ backgroundColor: "var(--beige)" }}
               >
@@ -88,10 +97,15 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                       className="w-full rounded-xl px-4 py-3 font-body text-sm outline-none transition-all"
                       style={{
                         backgroundColor: "var(--cream)",
-                        border: "1px solid var(--beige-dark)",
+                        border: `1px solid ${formData.contact && !phoneValid ? "var(--olive)" : "var(--beige-dark)"}`,
                         color: "var(--text-main)",
                       }}
                     />
+                    {formData.contact && !phoneValid && (
+                      <p className="font-body text-xs mt-1" style={{ color: "var(--olive)" }}>
+                        Введите не менее 10 цифр
+                      </p>
+                    )}
                   </div>
                 </div>
 
