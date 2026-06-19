@@ -12,9 +12,20 @@ type FormSectionProps = {
   setPrivacyOpen: (open: boolean) => void;
 };
 
+function formatPhone(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  let result = "";
+  if (digits.length > 0) result += digits[0];
+  if (digits.length > 1) result += " " + digits.slice(1, 4);
+  if (digits.length > 4) result += " " + digits.slice(4, 7);
+  if (digits.length > 7) result += " " + digits.slice(7, 9);
+  if (digits.length > 9) result += " " + digits.slice(9, 11);
+  return result;
+}
+
 export function FormSection({ formData, setFormData, submitted, handleSubmit, privacyOpen, setPrivacyOpen }: FormSectionProps) {
   const phoneDigits = formData.contact.replace(/\D/g, "");
-  const phoneValid = phoneDigits.length >= 10;
+  const phoneValid = phoneDigits.length === 11;
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,9 +102,9 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                     <input
                       type="tel"
                       required
-                      placeholder="+7 999 000 00 00"
+                      placeholder="8 999 123 45 67"
                       value={formData.contact}
-                      onChange={(e) => setFormData({ ...formData, contact: e.target.value.replace(/[^\d+\s\-()]/g, "") })}
+                      onChange={(e) => setFormData({ ...formData, contact: formatPhone(e.target.value) })}
                       className="w-full rounded-xl px-4 py-3 font-body text-sm outline-none transition-all"
                       style={{
                         backgroundColor: "var(--cream)",
@@ -103,7 +114,7 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                     />
                     {formData.contact && !phoneValid && (
                       <p className="font-body text-xs mt-1" style={{ color: "var(--olive)" }}>
-                        Введите не менее 10 цифр
+                        Введите полный номер из 11 цифр
                       </p>
                     )}
                   </div>
