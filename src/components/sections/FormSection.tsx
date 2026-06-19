@@ -77,14 +77,14 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                       className="block font-body text-sm font-medium mb-2"
                       style={{ color: "var(--text-main)" }}
                     >
-                      Телефон или Telegram
+                      Номер телефона
                     </label>
                     <input
-                      type="text"
+                      type="tel"
                       required
-                      placeholder="+7 ... или @username"
+                      placeholder="+7 999 000 00 00"
                       value={formData.contact}
-                      onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                      onChange={(e) => setFormData({ ...formData, contact: e.target.value.replace(/[^\d+\s\-()]/g, "") })}
                       className="w-full rounded-xl px-4 py-3 font-body text-sm outline-none transition-all"
                       style={{
                         backgroundColor: "var(--cream)",
