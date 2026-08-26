@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
 import { PHOTOS, PAINS, STEPS } from "@/components/shared/data";
@@ -266,6 +267,13 @@ export function SolutionSection() {
             </div>
           </FadeUp>
         </div>
+        <FadeUp delay={350}>
+          <div className="text-center mt-10">
+            <Link to="/format" className="font-body text-sm underline underline-offset-4" style={{ color: "var(--olive)" }}>
+              Подробнее о том, как устроен формат
+            </Link>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
