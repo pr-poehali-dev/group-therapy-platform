@@ -50,17 +50,14 @@ export function HeroSection() {
                 className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                 style={{ color: "var(--text-main)" }}
               >
-                Личный психолог —{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>встречи и поддержка между ними</em>
+                Личный психолог в любое время{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
               <div className="border-t my-8" style={{ borderColor: "var(--border)" }} />
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                2 индивидуальные онлайн-сессии в месяц + личный чат с психологом между встречами
-              </p>
-              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                Не нужно ждать неделю до следующей сессии, чтобы обсудить то, что происходит сейчас. Пишите своему психологу между встречами и продолжайте работу в течение месяца.
+                Не откладывайте важное на неделю. Пишите психологу между сессиями и работайте над запросом непрерывно
               </p>
             </FadeUp>
             <FadeUp delay={300}>
@@ -107,8 +104,8 @@ export function HeroSection() {
               className="font-display text-5xl font-light leading-tight"
               style={{ color: "var(--text-main)" }}
             >
-              Личный психолог —{" "}
-              <em className="not-italic" style={{ color: "var(--olive)" }}>встречи и поддержка между ними</em>
+              Личный психолог в любое время{" "}
+              <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
             </h1>
           </FadeUp>
           <FadeUp delay={150} className="relative">
@@ -120,10 +117,7 @@ export function HeroSection() {
           <div className="pt-4">
             <FadeUp delay={200}>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-                2 индивидуальные онлайн-сессии в месяц + личный чат с психологом между встречами
-              </p>
-              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                Не нужно ждать неделю до следующей сессии, чтобы обсудить то, что происходит сейчас. Пишите своему психологу между встречами и продолжайте работу в течение месяца.
+                Не откладывайте важное на неделю. Пишите психологу между сессиями и работайте над запросом непрерывно
               </p>
             </FadeUp>
             <FadeUp delay={300}>
