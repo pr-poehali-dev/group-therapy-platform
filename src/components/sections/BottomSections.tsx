@@ -245,8 +245,11 @@ export function FinalCTASection() {
           <p className="font-body text-lg mb-2" style={{ color: "rgba(250,247,242,0.85)" }}>
             2 индивидуальные сессии + личный чат с психологом между встречами.
           </p>
-          <div className="font-display text-4xl font-light mb-10" style={{ color: "var(--cream)" }}>
+          <div className="font-display text-4xl font-light" style={{ color: "var(--cream)" }}>
             8 999 ₽ <span className="text-xl">/ месяц</span>
+          </div>
+          <div className="font-body text-sm mb-10" style={{ color: "rgba(250,247,242,0.75)" }}>
+            ≈ 2 250 ₽ в неделю
           </div>
           <a
             href="#form"
