@@ -15,8 +15,8 @@ export function AccentDividerSection() {
             className="font-display text-3xl lg:text-4xl font-light leading-snug"
             style={{ color: "var(--text-main)" }}
           >
-            Выберите направление —<br />
-            <em className="not-italic" style={{ color: "var(--olive)" }}>мы подберём подходящую группу</em>
+            Расскажите, с чем хотите разобраться —<br />
+            <em className="not-italic" style={{ color: "var(--olive)" }}>мы подберём подходящего психолога</em>
           </p>
         </FadeUp>
       </div>
@@ -30,21 +30,21 @@ export function DirectionsSection({ onDirectionClick }: DirectionsProps) {
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
           <div className="text-center mb-20">
-            <div className="section-tag mb-4">направления групп</div>
+            <div className="section-tag mb-4">с чем можно обратиться</div>
             <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
               Найдите своё
             </h2>
           </div>
         </FadeUp>
-        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {DIRECTIONS.map((dir, i) => (
-            <FadeUp key={i} delay={i * 80}>
+            <FadeUp key={i} delay={i * 60}>
               <div
-                className="card-warm p-8 cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+                className="card-warm p-6 cursor-pointer transition-transform duration-200 hover:scale-[1.02] h-full"
                 onClick={() => onDirectionClick(dir.title)}
               >
-                <div className="text-4xl mb-6">{dir.emoji}</div>
-                <h3 className="font-display text-2xl font-light mb-3" style={{ color: "var(--text-main)" }}>
+                <div className="text-3xl mb-4">{dir.emoji}</div>
+                <h3 className="font-display text-xl font-light mb-2" style={{ color: "var(--text-main)" }}>
                   {dir.title}
                 </h3>
                 <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -66,15 +66,15 @@ export function BenefitsSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <FadeUp>
-              <div className="section-tag mb-4">почему выбирают нас</div>
+              <div className="section-tag mb-4">между встречами</div>
             </FadeUp>
             <FadeUp delay={100}>
               <h2
                 className="font-display text-4xl lg:text-5xl font-light mb-12"
                 style={{ color: "var(--text-main)" }}
               >
-                Всё, что нужно<br />
-                <em className="not-italic" style={{ color: "var(--olive)" }}>для безопасной работы</em>
+                Ваш психолог<br />
+                <em className="not-italic" style={{ color: "var(--olive)" }}>всегда остаётся на связи</em>
               </h2>
             </FadeUp>
             <div className="space-y-5">
@@ -104,7 +104,7 @@ export function BenefitsSection() {
           <FadeUp delay={200}>
             <div className="space-y-4">
               <div className="rounded-3xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                <img src={PHOTOS.online} alt="Онлайн встреча группы" className="w-full h-full object-cover" />
+                <img src={PHOTOS.online} alt="Онлайн-сессия с психологом" className="w-full h-full object-cover" />
               </div>
             </div>
           </FadeUp>
@@ -115,7 +115,7 @@ export function BenefitsSection() {
               className="btn-primary"
               onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Начать терапию
+              Начать работу
               <Icon name="ArrowRight" size={16} />
             </button>
           </div>
@@ -159,21 +159,40 @@ export function ReviewsSection() {
 }
 
 export function PricingSection() {
+  const included = [
+    "2 индивидуальные онлайн-сессии по 50–60 минут",
+    "Личный чат с психологом между встречами",
+    "Ответы психолога в течение рабочего дня",
+    "Возможность поменять психолога, если не подошёл",
+  ];
   return (
     <section className="py-20">
-      <div className="max-w-3xl mx-auto px-6 text-center">
+      <div className="max-w-xl mx-auto px-6 text-center">
         <FadeUp>
           <div className="section-tag mb-4">стоимость</div>
-          <h2 className="font-display lg:text-5xl font-light mb-6 text-3xl" style={{ color: "var(--text-main)" }}>Скидка 20% при покупке от 8 сессий.</h2>
-          <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>1 500 ₽ — за онлайн встречу</div>
-          <div className="mb-4" />
-          <div className="font-display text-6xl font-light mb-2" style={{ color: "var(--olive)" }}>2 000 ₽ — за офлайн встречу</div>
-          <p className="font-body text-base mb-2" style={{ color: "var(--text-muted)" }}></p>
-          <p className="font-body text-sm mb-10 max-w-xl mx-auto" style={{ color: "var(--text-muted)" }}></p>
-          <a href="#form" className="btn-primary text-base px-8 py-4">
-            Узнать подходящий формат
-            <Icon name="ArrowRight" size={16} />
-          </a>
+          <h2 className="font-display text-4xl lg:text-5xl font-light mb-10" style={{ color: "var(--text-main)" }}>
+            Личный психолог
+          </h2>
+        </FadeUp>
+        <FadeUp delay={100}>
+          <div className="card-warm p-10">
+            <div className="font-display text-6xl font-light mb-1" style={{ color: "var(--olive)" }}>
+              7 990 ₽
+            </div>
+            <div className="font-body text-sm mb-8" style={{ color: "var(--text-muted)" }}>в месяц</div>
+            <ul className="space-y-3 mb-10 text-left max-w-sm mx-auto">
+              {included.map((t, i) => (
+                <li key={i} className="flex items-start gap-3 font-body text-sm" style={{ color: "var(--text-main)" }}>
+                  <Icon name="Check" size={16} style={{ color: "var(--olive)" }} className="mt-0.5 flex-shrink-0" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <a href="#form" className="btn-primary text-base px-8 py-4 w-full justify-center">
+              Начать подбор
+              <Icon name="ArrowRight" size={16} />
+            </a>
+          </div>
         </FadeUp>
       </div>
     </section>
@@ -223,14 +242,14 @@ export function FinalCTASection() {
             Готовы сделать первый шаг?
           </h2>
           <p className="font-body text-lg mb-10" style={{ color: "rgba(250,247,242,0.8)" }}>
-            Оставьте заявку — мы свяжемся и подберём группу под ваш запрос
+            Оставьте заявку — мы свяжемся и подберём психолога под ваш запрос
           </p>
           <a
             href="#form"
             className="inline-flex items-center gap-2 font-body font-medium px-8 py-4 rounded-full transition-all hover:opacity-90"
             style={{ backgroundColor: "var(--cream)", color: "var(--olive)" }}
           >
-            Подобрать группу
+            Подобрать психолога
             <Icon name="ArrowRight" size={16} />
           </a>
         </FadeUp>

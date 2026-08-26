@@ -1,6 +1,5 @@
 import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
-import { DIRECTIONS } from "@/components/shared/data";
 import type { FormData } from "@/components/shared/data";
 
 type FormSectionProps = {
@@ -42,10 +41,10 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
             <div className="text-center mb-12">
               <div className="section-tag mb-4">заявка</div>
               <h2 className="font-display text-4xl lg:text-5xl font-light mb-4" style={{ color: "var(--text-main)" }}>
-                Оставьте заявку
+                Подобрать психолога
               </h2>
               <p className="font-body text-base" style={{ color: "var(--text-muted)" }}>
-                Никаких обязательств — просто расскажите о себе, и мы подберём варианты
+                Знакомство и подбор — бесплатно. Никаких обязательств
               </p>
             </div>
           </FadeUp>
@@ -121,68 +120,17 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                 </div>
 
                 <div>
-                  <label className="block font-body text-sm font-medium mb-2" style={{ color: "var(--text-main)" }}>
-                    Интересующая группа
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {DIRECTIONS.map((dir) => (
-                      <button
-                        key={dir.title}
-                        type="button"
-                        onClick={() => setFormData(f => ({ ...f, direction: f.direction === dir.title ? "" : dir.title }))}
-                        className="py-2.5 px-3 rounded-xl font-body text-sm text-left transition-all"
-                        style={{
-                          backgroundColor: formData.direction === dir.title ? "var(--olive)" : "var(--cream)",
-                          color: formData.direction === dir.title ? "var(--cream)" : "var(--text-muted)",
-                          border: "1px solid var(--beige-dark)",
-                        }}
-                      >
-                        {dir.emoji} {dir.title}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
                   <label
                     className="block font-body text-sm font-medium mb-2"
                     style={{ color: "var(--text-main)" }}
                   >
-                    Удобный способ связи
-                  </label>
-                  <div className="flex gap-3">
-                    {["telegram", "max", "phone"].map((method) => (
-                      <button
-                        key={method}
-                        type="button"
-                        onClick={() => setFormData({ ...formData, contactMethod: method })}
-                        className="flex-1 py-2.5 rounded-xl font-body text-sm font-medium transition-all"
-                        style={{
-                          backgroundColor:
-                            formData.contactMethod === method ? "var(--olive)" : "var(--cream)",
-                          color:
-                            formData.contactMethod === method ? "var(--cream)" : "var(--text-muted)",
-                          border: "1px solid var(--beige-dark)",
-                        }}
-                      >
-                        {method === "telegram" ? "Telegram" : method === "max" ? "MAX" : "Звонок"}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    className="block font-body text-sm font-medium mb-2"
-                    style={{ color: "var(--text-main)" }}
-                  >
-                    Комментарий (необязательно)
+                    С чем хотите разобраться? (необязательно)
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Расскажите подробнее, если хотите..."
-                    value={formData.comment}
-                    onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                    placeholder="Расскажите, если хотите..."
+                    value={formData.topic}
+                    onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                     className="w-full rounded-xl px-4 py-3 font-body text-sm outline-none resize-none"
                     style={{
                       backgroundColor: "var(--cream)",
@@ -193,7 +141,7 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
                 </div>
 
                 <button type="submit" className="btn-primary w-full justify-center text-base py-4">
-                  Отправить заявку
+                  Подобрать психолога
                   <Icon name="ArrowRight" size={16} />
                 </button>
                 <p className="font-body text-xs text-center" style={{ color: "var(--text-muted)" }}>
@@ -213,7 +161,7 @@ export function FormSection({ formData, setFormData, submitted, handleSubmit, pr
               Вместе
             </span>
             <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
-              — групповая терапия онлайн
+              — личный психолог онлайн
             </span>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4">

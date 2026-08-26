@@ -31,7 +31,7 @@ export function NavSection() {
           ))}
         </div>
         <a href="#form" className="btn-primary text-sm py-2.5 px-5">
-          Подобрать группу
+          Подобрать психолога
         </a>
       </div>
     </nav>
@@ -50,31 +50,39 @@ export function HeroSection() {
                 className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                 style={{ color: "var(--text-main)" }}
               >
-                Онлайн и офлайн-группы с психологом{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>от 1 500 ₽ за встречу</em>
+                Личный психолог —{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>встречи и поддержка между ними</em>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
               <div className="border-t my-8" style={{ borderColor: "var(--border)" }} />
-              <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу.
+              <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
+                2 индивидуальные онлайн-сессии в месяц + личный чат с психологом между встречами
+              </p>
+              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
+                Не нужно ждать неделю до следующей сессии, чтобы обсудить то, что происходит сейчас. Пишите своему психологу между встречами и продолжайте работу в течение месяца.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
-              <div className="flex flex-wrap gap-3 mb-10">
-                <a href="#form" className="btn-primary">
-                  Подобрать группу
-                  <Icon name="ArrowRight" size={16} />
-                </a>
-                <a href="#how" className="btn-outline">Как это работает</a>
+              <div className="flex flex-col gap-2 mb-10">
+                <div className="flex flex-wrap gap-3">
+                  <a href="#form" className="btn-primary">
+                    Подобрать психолога
+                    <Icon name="ArrowRight" size={16} />
+                  </a>
+                  <a href="#how" className="btn-outline">Как это работает</a>
+                </div>
+                <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
+                  Знакомство и подбор психолога — бесплатно
+                </span>
               </div>
             </FadeUp>
             <FadeUp delay={400}>
               <div className="flex flex-wrap gap-6">
                 {[
-                  { icon: "MapPin", text: "Офлайн и онлайн в Москве" },
-                  { icon: "Users", text: "Группы до 10 человек" },
-                  { icon: "Sparkles", text: "Подбор под запрос" },
+                  { icon: "CalendarCheck", text: "2 сессии в месяц" },
+                  { icon: "MessageCircle", text: "Личный чат между встречами" },
+                  { icon: "UserCheck", text: "Один психолог все время" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span style={{ color: "var(--olive)" }}><Icon name={item.icon} size={15} /></span>
@@ -86,7 +94,7 @@ export function HeroSection() {
           </div>
           <FadeUp delay={150} className="relative">
             <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-              <img src={PHOTOS.hero} alt="Групповая терапия онлайн" className="w-full h-full object-cover" />
+              <img src={PHOTOS.hero} alt="Индивидуальная онлайн-терапия" className="w-full h-full object-cover" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }} />
             </div>
           </FadeUp>
@@ -99,37 +107,45 @@ export function HeroSection() {
               className="font-display text-5xl font-light leading-tight"
               style={{ color: "var(--text-main)" }}
             >
-              Онлайн и офлайн-группы с психологом{" "}
-              <em className="not-italic" style={{ color: "var(--olive)" }}>от 1 500 ₽ за встречу</em>
+              Личный психолог —{" "}
+              <em className="not-italic" style={{ color: "var(--olive)" }}>встречи и поддержка между ними</em>
             </h1>
           </FadeUp>
           <FadeUp delay={150} className="relative">
             <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-              <img src={PHOTOS.hero} alt="Групповая терапия онлайн" className="w-full h-full object-cover" />
+              <img src={PHOTOS.hero} alt="Индивидуальная онлайн-терапия" className="w-full h-full object-cover" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }} />
             </div>
           </FadeUp>
           <div className="pt-4">
             <FadeUp delay={200}>
-              <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                Проводим групповые терапии с профессиональными психологами для 5–8 человек от 1500 рублей за встречу.
+              <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+                2 индивидуальные онлайн-сессии в месяц + личный чат с психологом между встречами
+              </p>
+              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
+                Не нужно ждать неделю до следующей сессии, чтобы обсудить то, что происходит сейчас. Пишите своему психологу между встречами и продолжайте работу в течение месяца.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
-              <div className="flex flex-wrap gap-3 mb-10">
-                <a href="#form" className="btn-primary">
-                  Подобрать группу
-                  <Icon name="ArrowRight" size={16} />
-                </a>
-                <a href="#how" className="btn-outline">Как это работает</a>
+              <div className="flex flex-col gap-2 mb-10">
+                <div className="flex flex-wrap gap-3">
+                  <a href="#form" className="btn-primary">
+                    Подобрать психолога
+                    <Icon name="ArrowRight" size={16} />
+                  </a>
+                  <a href="#how" className="btn-outline">Как это работает</a>
+                </div>
+                <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
+                  Знакомство и подбор психолога — бесплатно
+                </span>
               </div>
             </FadeUp>
             <FadeUp delay={400}>
               <div className="flex flex-wrap gap-6">
                 {[
-                  { icon: "MapPin", text: "Офлайн и онлайн в Москве" },
-                  { icon: "Users", text: "Группы до 10 человек" },
-                  { icon: "Sparkles", text: "Подбор под запрос" },
+                  { icon: "CalendarCheck", text: "2 сессии в месяц" },
+                  { icon: "MessageCircle", text: "Личный чат между встречами" },
+                  { icon: "UserCheck", text: "Один психолог все время" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span style={{ color: "var(--olive)" }}><Icon name={item.icon} size={15} /></span>
@@ -199,50 +215,67 @@ export function SolutionSection() {
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <FadeUp>
-            <div className="grid grid-cols-2 gap-3" style={{ aspectRatio: "1" }}>
-              <div className="rounded-2xl overflow-hidden row-span-2">
-                <img src={PHOTOS.group} alt="Группа поддержки" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden">
-                <img src={PHOTOS.portrait} alt="Участница терапии" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden">
-                <img src={PHOTOS.journal} alt="Дневник терапии" className="w-full h-full object-cover" />
+        <FadeUp>
+          <div className="text-center mb-14">
+            <div className="section-tag mb-4">почему так удобнее</div>
+            <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
+              Психолог нужен не только<br />
+              <em className="not-italic" style={{ color: "var(--olive)" }}>один час в неделю</em>
+            </h2>
+          </div>
+        </FadeUp>
+        <FadeUp delay={100}>
+          <p className="font-body text-base leading-relaxed mb-14 max-w-2xl mx-auto text-center" style={{ color: "var(--text-muted)" }}>
+            Часто важные ситуации происходят между сессиями. Вместо того чтобы пытаться вспомнить всё через неделю, можно написать психологу сразу и продолжить работу в чате.
+          </p>
+        </FadeUp>
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <FadeUp delay={150}>
+            <div className="card-warm p-8 h-full">
+              <div className="section-tag mb-4">классический формат</div>
+              <ul className="space-y-3 mb-8">
+                {["4 сессии в месяц", "Только встречи"].map((t, i) => (
+                  <li key={i} className="flex items-center gap-3 font-body text-base" style={{ color: "var(--text-main)" }}>
+                    <Icon name="Check" size={16} style={{ color: "var(--text-muted)" }} />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="font-display text-3xl font-light" style={{ color: "var(--text-muted)" }}>
+                12 000–16 000 ₽ <span className="text-lg">/ мес</span>
               </div>
             </div>
           </FadeUp>
-          <div>
-            <FadeUp>
-              <div className="section-tag mb-4">почему группа работает</div>
-            </FadeUp>
-            <FadeUp delay={100}>
-              <h2
-                className="font-display text-4xl lg:text-5xl font-light leading-tight mb-6"
-                style={{ color: "var(--text-main)" }}
-              >
-                Групповая терапия — это{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>поддержка людей с похожим опытом</em>
-              </h2>
-            </FadeUp>
-            <FadeUp delay={200}>
-              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>Групповая терапия — это встречи с психологом и 5–8 людьми, которые проживают те же трудности что и вы. Психолог ведет встречу. Изучая как другие справляются с похожими ситуациями вам будет становится легче и вы сможете приблизиться к решению вашего запроса.</p>
-            </FadeUp>
-          </div>
+          <FadeUp delay={250}>
+            <div className="card-warm p-8 h-full" style={{ backgroundColor: "var(--olive)" }}>
+              <div className="section-tag mb-4" style={{ color: "rgba(250,247,242,0.8)" }}>наш формат</div>
+              <ul className="space-y-3 mb-8">
+                {["2 индивидуальные сессии", "Личный чат между встречами"].map((t, i) => (
+                  <li key={i} className="flex items-center gap-3 font-body text-base" style={{ color: "var(--cream)" }}>
+                    <Icon name="Check" size={16} style={{ color: "var(--cream)" }} />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="font-display text-3xl font-light" style={{ color: "var(--cream)" }}>
+                7 990 ₽ <span className="text-lg">/ мес</span>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </div>
     </section>
   );
 }
 
-function PsychSlider() {
+function PsychSlider({ onSelect }: { onSelect: (name: string) => void }) {
   const psychologists = [
     {
       name: "Дмитрий",
       education: "Московский институт психоанализа",
       experience: "4 года в профессии",
       topics: "тревожностью, выгоранием, проблемами с самооценкой и отношениями",
+      approach: "Когнитивно-поведенческий подход, работа с конкретными ситуациями",
       photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f0514b42-9bb6-4eb2-9fff-c19cd4c29576.PNG",
     },
     {
@@ -250,6 +283,7 @@ function PsychSlider() {
       education: "Санкт-Петербургский государственный университет",
       experience: "16 лет в профессии",
       topics: "тревожностью, выгоранием, проблемами с самооценкой и отношениями",
+      approach: "Гештальт-подход, внимание к чувствам и отношениям",
       photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/82517d50-f9f9-4683-994d-bc65bc98e8f8.PNG",
     },
   ];
@@ -307,6 +341,10 @@ function PsychSlider() {
                 <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Работает с</p>
                 <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.topics}</p>
               </div>
+              <div className="border-t pt-6" style={{ borderColor: "var(--border)" }}>
+                <p className="text-xs uppercase tracking-widest mb-1" style={{ color: "var(--text-muted)" }}>Подход</p>
+                <p className="font-light text-lg" style={{ color: "var(--text-main)" }}>{p.approach}</p>
+              </div>
             </div>
             <div className="flex items-center gap-4 mt-10">
               <button
@@ -336,6 +374,13 @@ function PsychSlider() {
                 <Icon name="ChevronRight" size={18} />
               </button>
             </div>
+            <button
+              className="btn-primary mt-6"
+              onClick={() => onSelect(p.name)}
+            >
+              Выбрать психолога
+              <Icon name="ArrowRight" size={16} />
+            </button>
           </div>
         </div>
       </div>
@@ -343,7 +388,7 @@ function PsychSlider() {
   );
 }
 
-export function PsychologistsSection() {
+export function PsychologistsSection({ onSelect }: { onSelect?: (name: string) => void }) {
   return (
     <section className="py-24" style={{ backgroundColor: "var(--beige)" }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -356,18 +401,12 @@ export function PsychologistsSection() {
           </div>
         </FadeUp>
         <FadeUp delay={100}>
-          <PsychSlider />
-        </FadeUp>
-        <FadeUp delay={200}>
-          <div className="text-center mt-16">
-            <button
-              className="btn-primary"
-              onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Хочу к психологу
-              <Icon name="ArrowRight" size={16} />
-            </button>
-          </div>
+          <PsychSlider
+            onSelect={(name) => {
+              onSelect?.(name);
+              document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          />
         </FadeUp>
       </div>
     </section>

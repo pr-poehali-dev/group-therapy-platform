@@ -6,7 +6,6 @@ import {
   PainSection,
   SolutionSection,
   PsychologistsSection,
-  PhotoGallerySection,
   HowItWorksSection,
 } from "@/components/sections/TopSections";
 import {
@@ -26,6 +25,7 @@ export default function Index() {
     contact: "",
     topic: "",
     direction: "",
+    psychologist: "",
     contactMethod: "telegram",
     comment: "",
   });
@@ -49,13 +49,17 @@ export default function Index() {
     document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handlePsychologistSelect = (name: string) => {
+    setFormData(f => ({ ...f, psychologist: name }));
+  };
+
   return (
     <div className="font-body" style={{ backgroundColor: "var(--cream)" }}>
       <NavSection />
       <HeroSection />
       <PainSection />
       <SolutionSection />
-      <PsychologistsSection />
+      <PsychologistsSection onSelect={handlePsychologistSelect} />
       <HowItWorksSection />
       <AccentDividerSection />
       <DirectionsSection onDirectionClick={handleDirectionClick} />
