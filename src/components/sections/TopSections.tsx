@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
-import { PHOTOS, PAINS, STEPS } from "@/components/shared/data";
+import { PHOTOS, PAINS } from "@/components/shared/data";
 import formatIllustration from "@/assets/format_illustration.webp";
 
 export function NavSection() {
@@ -581,43 +581,55 @@ export function PhotoGallerySection() {
   );
 }
 
+const WEEKS = [
+  { num: "Неделя 1", title: "Индивидуальная видеосессия", text: "Определяем тему и следующие шаги." },
+  { num: "Неделя 2", title: "Чат + самостоятельная работа", text: "Вопросы, упражнения, обсуждение возникающих ситуаций." },
+  { num: "Неделя 3", title: "Индивидуальная видеосессия", text: "Разбираем произошедшее и корректируем дальнейшую работу." },
+  { num: "Неделя 4", title: "Чат + самостоятельная работа", text: "Продолжаем работу между встречами." },
+];
+
 export function HowItWorksSection() {
   return (
     <section id="how" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
           <div className="text-center mb-16">
-            <div className="section-tag mb-4">просто и понятно</div>
+            <div className="section-tag mb-4">как выглядит месяц</div>
             <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
-              Как это работает
+              Четыре недели работы
             </h2>
           </div>
         </FadeUp>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {STEPS.map((step, i) => (
+          {WEEKS.map((w, i) => (
             <FadeUp key={i} delay={i * 100}>
               <div className="relative">
-                <div className="font-display text-6xl font-light mb-4" style={{ color: "var(--beige-dark)" }}>
-                  {step.num}
-                </div>
-                <h3 className="font-display text-2xl font-medium mb-3" style={{ color: "var(--text-main)" }}>
-                  {step.title}
+                <div className="section-tag mb-3">{w.num}</div>
+                <h3 className="font-display text-xl font-medium mb-2 leading-snug" style={{ color: "var(--text-main)" }}>
+                  {w.title}
                 </h3>
                 <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                  {step.text}
+                  {w.text}
                 </p>
-                {i < STEPS.length - 1 && (
+                {i < WEEKS.length - 1 && (
                   <div
-                    className="hidden lg:block absolute top-8 -right-3 z-10"
+                    className="hidden lg:block absolute top-1 -right-3 z-10"
                     style={{ color: "var(--olive)", opacity: 0.4 }}
                   >
-                    <Icon name="ArrowRight" size={20} />
+                    <Icon name="ArrowRight" size={18} />
                   </div>
                 )}
               </div>
             </FadeUp>
           ))}
         </div>
+        <FadeUp delay={400}>
+          <div className="mt-16 rounded-3xl p-8 lg:p-10 text-center max-w-3xl mx-auto" style={{ backgroundColor: "var(--beige)" }}>
+            <p className="font-body text-base lg:text-lg leading-relaxed" style={{ color: "var(--text-main)" }}>
+              Вы не остаётесь без психологической работы на две недели. Меняется формат взаимодействия: глубокие вопросы разбираются на сессиях, а между ними остаются чат и самостоятельная работа.
+            </p>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
