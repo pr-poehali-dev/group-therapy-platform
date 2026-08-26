@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
 import { PHOTOS, PAINS, STEPS } from "@/components/shared/data";
+import formatIllustration from "@/assets/format_illustration.webp";
 
 export function NavSection() {
   return (
@@ -274,6 +275,78 @@ export function SolutionSection() {
             </Link>
           </div>
         </FadeUp>
+      </div>
+    </section>
+  );
+}
+
+export function HybridFormatSection() {
+  return (
+    <section className="py-20 lg:py-24 overflow-hidden" style={{ backgroundColor: "var(--cream)" }}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <FadeUp>
+              <div className="section-tag mb-4">наш формат</div>
+            </FadeUp>
+            <FadeUp delay={100}>
+              <h2 className="font-display text-3xl lg:text-4xl font-light leading-tight mb-6" style={{ color: "var(--text-main)" }}>
+                Гибрид общения{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>в чате и онлайн-сессий</em>
+              </h2>
+            </FadeUp>
+            <FadeUp delay={150}>
+              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
+                Мы объединяем глубокую работу с психологом на онлайн-сессиях и поддержку в чате между встречами, чтобы работа продолжалась именно тогда, когда она вам нужна.
+              </p>
+            </FadeUp>
+            <div className="space-y-4 mb-8">
+              {[
+                { icon: "MessageCircle", text: "Личный чат с психологом между встречами" },
+                { icon: "Video", text: "Индивидуальные онлайн-сессии по расписанию" },
+              ].map((item, i) => (
+                <FadeUp key={i} delay={200 + i * 80}>
+                  <div className="flex items-center gap-4 rounded-2xl p-5" style={{ backgroundColor: "var(--beige)" }}>
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "rgba(107,122,71,0.15)" }}
+                    >
+                      <span style={{ color: "var(--olive)" }}>
+                        <Icon name={item.icon} size={20} />
+                      </span>
+                    </div>
+                    <span className="font-body font-medium text-base" style={{ color: "var(--text-main)" }}>
+                      {item.text}
+                    </span>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
+            <FadeUp delay={380}>
+              <div className="flex flex-wrap gap-x-8 gap-y-3">
+                {[
+                  { icon: "HeartHandshake", text: "Поддержка ежедневно" },
+                  { icon: "Target", text: "Глубокие результаты" },
+                  { icon: "CalendarDays", text: "В своём темпе" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span style={{ color: "var(--olive)" }}><Icon name={item.icon} size={16} /></span>
+                    <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </FadeUp>
+          </div>
+          <FadeUp delay={150} className="order-1 lg:order-2">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
+              <img
+                src={formatIllustration}
+                alt="Формат общения: чат с психологом и онлайн-сессии"
+                className="w-full h-auto"
+              />
+            </div>
+          </FadeUp>
+        </div>
       </div>
     </section>
   );
