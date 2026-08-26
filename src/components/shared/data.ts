@@ -9,7 +9,7 @@ export const PHOTOS = {
 export const PAINS = [
   { icon: "Wind", text: "Тревога не отпускает", color: "bg-lavender-light" },
   { icon: "BatteryLow", text: "Работа забирает все силы", color: "bg-blue-light" },
-  { icon: "Wallet", text: "Индивидуальная терапия кажется дорогой", color: "bg-blue-light" },
+  { icon: "Wallet", text: "Индивидуальная терапия каждую неделю кажется дорогой", color: "bg-blue-light" },
 ];
 
 export const STEPS = [
@@ -33,7 +33,7 @@ export const DIRECTIONS = [
 export const BENEFITS = [
   { icon: "MessageCircle", title: "Можно писать между сессиями", text: "Не нужно сохранять всё до следующего созвона" },
   { icon: "UserCheck", title: "Тот же психолог", text: "Сообщения получает специалист, с которым проходят ваши встречи" },
-  { icon: "Clock", title: "Понятные границы", text: "Психолог отвечает в течение рабочего дня. Чат не заменяет экстренную помощь" },
+  { icon: "Clock", title: "Понятные границы", text: "Психолог отвечает в течение суток. Чат не заменяет экстренную помощь" },
 ];
 
 export const FOR_WHOM = [

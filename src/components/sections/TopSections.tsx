@@ -244,6 +244,9 @@ export function SolutionSection() {
               <div className="font-display text-3xl font-light" style={{ color: "var(--text-muted)" }}>
                 12 000–16 000 ₽ <span className="text-lg">/ мес</span>
               </div>
+              <div className="font-body text-sm mt-2" style={{ color: "var(--text-muted)" }}>
+                ≈ 3 000–4 000 ₽ в неделю
+              </div>
             </div>
           </FadeUp>
           <FadeUp delay={250}>
@@ -258,7 +261,13 @@ export function SolutionSection() {
                 ))}
               </ul>
               <div className="font-display text-3xl font-light" style={{ color: "var(--cream)" }}>
-                7 990 ₽ <span className="text-lg">/ мес</span>
+                8 999 ₽ <span className="text-lg">/ мес</span>
+              </div>
+              <div className="font-body text-sm mt-2" style={{ color: "rgba(250,247,242,0.75)" }}>
+                ≈ 2 250 ₽ в неделю
+              </div>
+              <div className="font-body text-sm mt-1 font-medium" style={{ color: "var(--cream)" }}>
+                На 25–44% дешевле классического формата
               </div>
             </div>
           </FadeUp>

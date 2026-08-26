@@ -74,7 +74,7 @@ export function BenefitsSection() {
                 style={{ color: "var(--text-main)" }}
               >
                 Ваш психолог<br />
-                <em className="not-italic" style={{ color: "var(--olive)" }}>всегда остаётся на связи</em>
+                <em className="not-italic" style={{ color: "var(--olive)" }}>остаётся на связи</em>
               </h2>
             </FadeUp>
             <div className="space-y-5">
@@ -177,9 +177,10 @@ export function PricingSection() {
         <FadeUp delay={100}>
           <div className="card-warm p-10">
             <div className="font-display text-6xl font-light mb-1" style={{ color: "var(--olive)" }}>
-              7 990 ₽
+              8 999 ₽
             </div>
-            <div className="font-body text-sm mb-8" style={{ color: "var(--text-muted)" }}>в месяц</div>
+            <div className="font-body text-sm mb-1" style={{ color: "var(--text-muted)" }}>в месяц · ≈ 2 250 ₽ в неделю</div>
+            <div className="font-body text-sm mb-8 font-medium" style={{ color: "var(--olive)" }}>На 25–44% дешевле классического формата</div>
             <ul className="space-y-3 mb-10 text-left max-w-sm mx-auto">
               {included.map((t, i) => (
                 <li key={i} className="flex items-start gap-3 font-body text-sm" style={{ color: "var(--text-main)" }}>
