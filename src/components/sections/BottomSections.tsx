@@ -234,17 +234,20 @@ export function FinalCTASection() {
             "radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, #C8C0DC 0%, transparent 50%)",
         }}
       />
-      <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
         <FadeUp>
           <h2
-            className="font-display text-5xl lg:text-6xl font-light mb-6 leading-tight"
+            className="font-display text-4xl lg:text-5xl font-light mb-6 leading-tight"
             style={{ color: "var(--cream)" }}
           >
-            Готовы сделать первый шаг?
+            Попробуйте формат в течение месяца
           </h2>
-          <p className="font-body text-lg mb-10" style={{ color: "rgba(250,247,242,0.8)" }}>
-            Оставьте заявку — мы свяжемся и подберём психолога под ваш запрос
+          <p className="font-body text-lg mb-2" style={{ color: "rgba(250,247,242,0.85)" }}>
+            2 индивидуальные сессии + личный чат с психологом между встречами.
           </p>
+          <div className="font-display text-4xl font-light mb-10" style={{ color: "var(--cream)" }}>
+            8 999 ₽ <span className="text-xl">/ месяц</span>
+          </div>
           <a
             href="#form"
             className="inline-flex items-center gap-2 font-body font-medium px-8 py-4 rounded-full transition-all hover:opacity-90"
@@ -253,6 +256,9 @@ export function FinalCTASection() {
             Подобрать психолога
             <Icon name="ArrowRight" size={16} />
           </a>
+          <p className="font-body text-sm mt-5" style={{ color: "rgba(250,247,242,0.7)" }}>
+            Подбор психолога бесплатно. Если специалист не подошёл, его можно заменить.
+          </p>
         </FadeUp>
       </div>
     </section>
