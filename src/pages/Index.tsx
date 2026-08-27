@@ -12,7 +12,6 @@ import {
 import {
   AccentDividerSection,
   BenefitsSection,
-  ReviewsSection,
   PricingSection,
   FAQSection,
   FinalCTASection,
@@ -59,7 +58,6 @@ export default function Index() {
       <HowItWorksSection />
       <AccentDividerSection />
       <BenefitsSection />
-      <ReviewsSection />
       <PricingSection />
       <FAQSection />
       <FinalCTASection />
