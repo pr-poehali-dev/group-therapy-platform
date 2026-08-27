@@ -21,10 +21,10 @@ export function NavSection() {
           <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>терапия</span>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          {["Как это работает", "Направления", "Отзывы", "FAQ"].map((item, i) => (
+          {["Как это работает", "Отзывы", "FAQ"].map((item, i) => (
             <a
               key={i}
-              href={`#${["how", "directions", "reviews", "faq"][i]}`}
+              href={`#${["how", "reviews", "faq"][i]}`}
               className="font-body text-sm transition-colors hover:text-olive"
               style={{ color: "var(--text-muted)" }}
             >

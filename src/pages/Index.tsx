@@ -11,7 +11,6 @@ import {
 } from "@/components/sections/TopSections";
 import {
   AccentDividerSection,
-  DirectionsSection,
   BenefitsSection,
   ReviewsSection,
   PricingSection,
@@ -45,11 +44,6 @@ export default function Index() {
     setSubmitted(true);
   };
 
-  const handleDirectionClick = (title: string) => {
-    setFormData(f => ({ ...f, direction: title }));
-    document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const handlePsychologistSelect = (name: string) => {
     setFormData(f => ({ ...f, psychologist: name }));
   };
@@ -64,7 +58,6 @@ export default function Index() {
       <PsychologistsSection onSelect={handlePsychologistSelect} />
       <HowItWorksSection />
       <AccentDividerSection />
-      <DirectionsSection onDirectionClick={handleDirectionClick} />
       <BenefitsSection />
       <ReviewsSection />
       <PricingSection />
