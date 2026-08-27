@@ -4,6 +4,8 @@ import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
 import { PHOTOS, PAINS } from "@/components/shared/data";
 import formatIllustration from "@/assets/format_illustration.webp";
+import psych1Photo from "@/assets/photos/psych1.webp";
+import psych2Photo from "@/assets/photos/psych2.webp";
 
 export function NavSection() {
   return (
@@ -360,7 +362,7 @@ function PsychSlider({ onSelect }: { onSelect: (name: string) => void }) {
       experience: "4 года в профессии",
       topics: "тревожностью, выгоранием, проблемами с самооценкой и отношениями",
       approach: "Когнитивно-поведенческий подход, работа с конкретными ситуациями",
-      photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f0514b42-9bb6-4eb2-9fff-c19cd4c29576.PNG",
+      photo: psych1Photo,
     },
     {
       name: "Наталья",
@@ -368,7 +370,7 @@ function PsychSlider({ onSelect }: { onSelect: (name: string) => void }) {
       experience: "16 лет в профессии",
       topics: "тревожностью, выгоранием, проблемами с самооценкой и отношениями",
       approach: "Гештальт-подход, внимание к чувствам и отношениям",
-      photo: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/82517d50-f9f9-4683-994d-bc65bc98e8f8.PNG",
+      photo: psych2Photo,
     },
   ];
 

@@ -1,9 +1,19 @@
+import heroPhoto from "@/assets/photos/hero.webp";
+import groupPhoto from "@/assets/photos/group.webp";
+import portraitPhoto from "@/assets/photos/portrait.webp";
+import journalPhoto from "@/assets/photos/journal.webp";
+import onlinePhoto from "@/assets/photos/online.webp";
+import review1 from "@/assets/photos/review1.webp";
+import review2 from "@/assets/photos/review2.webp";
+import review3 from "@/assets/photos/review3.webp";
+import review4 from "@/assets/photos/review4.webp";
+
 export const PHOTOS = {
-  hero: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/b80b40da-789f-4042-87ff-0f6c3a5858df.jpg",
-  group: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/e3b656eb-7074-4510-82b4-fe3247852689.jpg",
-  portrait: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/f7353052-3dbf-4e6e-b0be-e454923ba7ab.jpg",
-  journal: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/298cdf80-b9c5-4158-963e-d4eb0f59dc92.JPG",
-  online: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/files/51dad1ac-b780-4bbb-b308-1bf4e1b0f717.jpg",
+  hero: heroPhoto,
+  group: groupPhoto,
+  portrait: portraitPhoto,
+  journal: journalPhoto,
+  online: onlinePhoto,
 };
 
 export const PAINS = [
@@ -44,10 +54,10 @@ export const FOR_WHOM = [
 ];
 
 export const REVIEW_SCREENSHOTS = [
-  { id: 1, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/5e60ce87-d53b-4f2d-a15d-8492516202b4.JPG" },
-  { id: 2, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/c56e8f58-e1a9-41bc-897a-df088c475490.JPG" },
-  { id: 3, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/8223818c-a58c-4f3c-a848-70224f62735b.JPG" },
-  { id: 4, src: "https://cdn.poehali.dev/projects/1b1371b5-5150-452d-a7e3-0551ef6d4722/bucket/ba65f3ca-086a-4145-9eff-b5fa2fc212b1.JPG" },
+  { id: 1, src: review1 },
+  { id: 2, src: review2 },
+  { id: 3, src: review3 },
+  { id: 4, src: review4 },
 ];
 
 export const FAQS = [
