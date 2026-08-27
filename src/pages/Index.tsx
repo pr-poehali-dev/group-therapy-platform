@@ -34,6 +34,13 @@ export default function Index() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      await fetch('https://functions.poehali.dev/d62b24a3-8e87-4210-bd46-21bc5792a72a', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) { console.error(err); }
+    try {
       await fetch('https://functions.poehali.dev/2a22ec45-740f-4b26-860c-5396f7362ff8', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
