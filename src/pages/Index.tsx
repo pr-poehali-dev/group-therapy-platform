@@ -59,10 +59,10 @@ export default function Index() {
       <NavSection />
       <HeroSection />
       <PainSection />
-      <SolutionSection />
-      <HybridFormatSection />
-      <PsychologistsSection onSelect={handlePsychologistSelect} />
       <HowItWorksSection />
+      <HybridFormatSection />
+      <SolutionSection />
+      <PsychologistsSection onSelect={handlePsychologistSelect} />
       <AccentDividerSection />
       <BenefitsSection />
       <PricingSection />
