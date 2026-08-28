@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { FadeUp } from "@/components/shared/FadeUp";
 import { PHOTOS, PAINS } from "@/components/shared/data";
@@ -270,13 +269,6 @@ export function SolutionSection() {
             </div>
           </FadeUp>
         </div>
-        <FadeUp delay={350}>
-          <div className="text-center mt-10">
-            <Link to="/format" className="font-body text-sm underline underline-offset-4" style={{ color: "var(--olive)" }}>
-              Подробнее о том, как устроен формат
-            </Link>
-          </div>
-        </FadeUp>
       </div>
     </section>
   );
@@ -583,53 +575,43 @@ export function PhotoGallerySection() {
   );
 }
 
-const WEEKS = [
-  { num: "Неделя 1", title: "Индивидуальная видеосессия", text: "Определяем тему и следующие шаги." },
-  { num: "Неделя 2", title: "Чат + самостоятельная работа", text: "Вопросы, упражнения, обсуждение возникающих ситуаций." },
-  { num: "Неделя 3", title: "Индивидуальная видеосессия", text: "Разбираем произошедшее и корректируем дальнейшую работу." },
-  { num: "Неделя 4", title: "Чат + самостоятельная работа", text: "Продолжаем работу между встречами." },
-];
-
 export function HowItWorksSection() {
   return (
     <section id="how" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
-          <div className="text-center mb-16">
-            <div className="section-tag mb-4">как выглядит месяц</div>
-            <h2 className="font-display text-4xl lg:text-5xl font-light" style={{ color: "var(--text-main)" }}>
-              Четыре недели работы
-            </h2>
-          </div>
-        </FadeUp>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {WEEKS.map((w, i) => (
-            <FadeUp key={i} delay={i * 100}>
-              <div className="relative">
-                <div className="section-tag mb-3">{w.num}</div>
-                <h3 className="font-display text-xl font-medium mb-2 leading-snug" style={{ color: "var(--text-main)" }}>
-                  {w.title}
-                </h3>
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                  {w.text}
-                </p>
-                {i < WEEKS.length - 1 && (
-                  <div
-                    className="hidden lg:block absolute top-1 -right-3 z-10"
-                    style={{ color: "var(--olive)", opacity: 0.4 }}
-                  >
-                    <Icon name="ArrowRight" size={18} />
-                  </div>
-                )}
+          <div
+            className="rounded-3xl p-10 lg:p-16 text-center max-w-3xl mx-auto relative overflow-hidden"
+            style={{ backgroundColor: "var(--olive)" }}
+          >
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 15% 20%, white 0%, transparent 45%), radial-gradient(circle at 85% 80%, #C8C0DC 0%, transparent 45%)",
+              }}
+            />
+            <div className="relative z-10">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                style={{ backgroundColor: "rgba(250,247,242,0.15)" }}
+              >
+                <Icon name="Repeat" size={26} style={{ color: "var(--cream)" }} />
               </div>
-            </FadeUp>
-          ))}
-        </div>
-        <FadeUp delay={400}>
-          <div className="mt-16 rounded-3xl p-8 lg:p-10 text-center max-w-3xl mx-auto" style={{ backgroundColor: "var(--beige)" }}>
-            <p className="font-body text-base lg:text-lg leading-relaxed" style={{ color: "var(--text-main)" }}>
-              Вы не остаётесь без психологической работы на две недели. Меняется формат взаимодействия: глубокие вопросы разбираются на сессиях, а между ними остаются чат и самостоятельная работа.
-            </p>
+              <h2
+                className="font-display text-3xl lg:text-4xl font-light leading-tight mb-6"
+                style={{ color: "var(--cream)" }}
+              >
+                Меньше видеовстреч —{" "}
+                <em className="not-italic" style={{ color: "#C8C0DC" }}>больше регулярной работы</em>
+              </h2>
+              <p
+                className="font-body text-base lg:text-lg leading-relaxed"
+                style={{ color: "rgba(250,247,242,0.85)" }}
+              >
+                Одна неделя — видеосессия + чат, следующая — работа в чате. Связь с психологом сохраняется весь месяц, поэтому вы экономите время и деньги, не ставя терапию на паузу.
+              </p>
+            </div>
           </div>
         </FadeUp>
       </div>
