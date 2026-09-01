@@ -53,14 +53,14 @@ export function HeroSection() {
                 className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                 style={{ color: "var(--text-main)" }}
               >
-                Личный психолог в любое время{" "}
+                Психолог всегда на связи{" "}
                 <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
               <div className="border-t my-8" style={{ borderColor: "var(--border)" }} />
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                Не откладывайте важное на неделю. Пишите психологу между сессиями и работайте над запросом непрерывно
+                Не только личная видеосессия, но и общение в чате между встречами. Можно обсудить важный вопрос тогда, когда он возник.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
@@ -107,7 +107,7 @@ export function HeroSection() {
               className="font-display text-5xl font-light leading-tight"
               style={{ color: "var(--text-main)" }}
             >
-              Личный психолог в любое время{" "}
+              Психолог всегда на связи{" "}
               <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
             </h1>
           </FadeUp>
@@ -120,7 +120,7 @@ export function HeroSection() {
           <div className="pt-4">
             <FadeUp delay={200}>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-                Не откладывайте важное на неделю. Пишите психологу между сессиями и работайте над запросом непрерывно
+                Не только личная видеосессия, но и общение в чате между встречами. Можно обсудить важный вопрос тогда, когда он возник.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
