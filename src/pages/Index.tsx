@@ -6,6 +6,7 @@ import {
   PainSection,
   SolutionSection,
   HybridFormatSection,
+  WhyChatSection,
   PsychologistsSection,
   HowItWorksSection,
 } from "@/components/sections/TopSections";
@@ -62,6 +63,7 @@ export default function Index() {
       <HowItWorksSection />
       <HybridFormatSection />
       <SolutionSection />
+      <WhyChatSection />
       <PsychologistsSection onSelect={handlePsychologistSelect} />
       <AccentDividerSection />
       <BenefitsSection />
