@@ -208,6 +208,75 @@ export function PainSection() {
   );
 }
 
+const COMPARISON_ROWS = [
+  { before: "1 час поговорили", after: "Видеосессия + чат" },
+  { before: "Следующая связь через неделю", after: "Можно написать между встречами" },
+  { before: "Забыл ситуацию — обсуждаешь постфактум", after: "Разбираешь ситуацию, когда она произошла" },
+  { before: "4 видеовстречи в месяц", after: "Меньше видеовстреч + постоянный контакт" },
+  { before: "Дороже", after: "Ниже стоимость" },
+];
+
+function ComparisonTable() {
+  return (
+    <div className="max-w-3xl mx-auto">
+      {/* DESKTOP */}
+      <div className="hidden sm:block card-warm overflow-hidden p-0">
+        <div className="grid grid-cols-2">
+          <div className="p-6 border-b" style={{ borderColor: "var(--border)" }}>
+            <span className="font-body font-medium text-sm" style={{ color: "var(--text-muted)" }}>
+              Обычный психолог
+            </span>
+          </div>
+          <div className="p-6 border-b" style={{ borderColor: "var(--border)", backgroundColor: "rgba(107,122,71,0.08)" }}>
+            <span className="font-body font-medium text-sm" style={{ color: "var(--olive)" }}>
+              Наш формат
+            </span>
+          </div>
+          {COMPARISON_ROWS.map((row, i) => (
+            <FadeUp key={i} delay={i * 70} className="contents">
+              <div
+                className="p-6 flex items-center gap-3"
+                style={{ borderTop: i > 0 ? "1px solid var(--border)" : "none" }}
+              >
+                <Icon name="X" size={16} style={{ color: "var(--text-muted)" }} className="flex-shrink-0" />
+                <span className="font-body text-base" style={{ color: "var(--text-muted)" }}>{row.before}</span>
+              </div>
+              <div
+                className="p-6 flex items-center gap-3"
+                style={{
+                  backgroundColor: "rgba(107,122,71,0.08)",
+                  borderTop: i > 0 ? "1px solid var(--border)" : "none",
+                }}
+              >
+                <Icon name="Check" size={16} style={{ color: "var(--olive)" }} className="flex-shrink-0" />
+                <span className="font-body font-medium text-base" style={{ color: "var(--text-main)" }}>{row.after}</span>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </div>
+
+      {/* MOBILE */}
+      <div className="sm:hidden space-y-4">
+        {COMPARISON_ROWS.map((row, i) => (
+          <FadeUp key={i} delay={i * 70}>
+            <div className="card-warm p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <Icon name="X" size={15} style={{ color: "var(--text-muted)" }} className="flex-shrink-0" />
+                <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>{row.before}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Icon name="Check" size={15} style={{ color: "var(--olive)" }} className="flex-shrink-0" />
+                <span className="font-body font-medium text-sm" style={{ color: "var(--text-main)" }}>{row.after}</span>
+              </div>
+            </div>
+          </FadeUp>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function SolutionSection() {
   return (
     <section className="py-20">
@@ -226,6 +295,9 @@ export function SolutionSection() {
             Часто важные ситуации происходят между сессиями. Вместо того чтобы пытаться вспомнить всё через неделю, можно написать психологу сразу и продолжить работу в чате.
           </p>
         </FadeUp>
+        <div className="mb-14">
+          <ComparisonTable />
+        </div>
         <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <FadeUp delay={150}>
             <div className="card-warm p-8 h-full">
