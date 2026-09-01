@@ -208,74 +208,19 @@ export function PainSection() {
   );
 }
 
-const COMPARISON_ROWS = [
-  { before: "1 час поговорили", after: "Видеосессия + чат" },
-  { before: "Следующая связь через неделю", after: "Можно написать между встречами" },
-  { before: "Забыл ситуацию — обсуждаешь постфактум", after: "Разбираешь ситуацию, когда она произошла" },
-  { before: "4 видеовстречи в месяц", after: "Меньше видеовстреч + постоянный контакт" },
-  { before: "Дороже", after: "Ниже стоимость" },
+const CLASSIC_POINTS = [
+  "4 сессии в месяц",
+  "Только встречи",
+  "Вопросы копятся до следующей недели",
+  "Ситуации разбираются постфактум",
 ];
 
-function ComparisonTable() {
-  return (
-    <div className="max-w-3xl mx-auto">
-      {/* DESKTOP */}
-      <div className="hidden sm:block card-warm overflow-hidden p-0">
-        <div className="grid grid-cols-2">
-          <div className="p-6 border-b" style={{ borderColor: "var(--border)" }}>
-            <span className="font-body font-medium text-sm" style={{ color: "var(--text-muted)" }}>
-              Обычный психолог
-            </span>
-          </div>
-          <div className="p-6 border-b" style={{ borderColor: "var(--border)", backgroundColor: "rgba(107,122,71,0.08)" }}>
-            <span className="font-body font-medium text-sm" style={{ color: "var(--olive)" }}>
-              Наш формат
-            </span>
-          </div>
-          {COMPARISON_ROWS.map((row, i) => (
-            <FadeUp key={i} delay={i * 70} className="contents">
-              <div
-                className="p-6 flex items-center gap-3"
-                style={{ borderTop: i > 0 ? "1px solid var(--border)" : "none" }}
-              >
-                <Icon name="X" size={16} style={{ color: "var(--text-muted)" }} className="flex-shrink-0" />
-                <span className="font-body text-base" style={{ color: "var(--text-muted)" }}>{row.before}</span>
-              </div>
-              <div
-                className="p-6 flex items-center gap-3"
-                style={{
-                  backgroundColor: "rgba(107,122,71,0.08)",
-                  borderTop: i > 0 ? "1px solid var(--border)" : "none",
-                }}
-              >
-                <Icon name="Check" size={16} style={{ color: "var(--olive)" }} className="flex-shrink-0" />
-                <span className="font-body font-medium text-base" style={{ color: "var(--text-main)" }}>{row.after}</span>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </div>
-
-      {/* MOBILE */}
-      <div className="sm:hidden space-y-4">
-        {COMPARISON_ROWS.map((row, i) => (
-          <FadeUp key={i} delay={i * 70}>
-            <div className="card-warm p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <Icon name="X" size={15} style={{ color: "var(--text-muted)" }} className="flex-shrink-0" />
-                <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>{row.before}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Icon name="Check" size={15} style={{ color: "var(--olive)" }} className="flex-shrink-0" />
-                <span className="font-body font-medium text-sm" style={{ color: "var(--text-main)" }}>{row.after}</span>
-              </div>
-            </div>
-          </FadeUp>
-        ))}
-      </div>
-    </div>
-  );
-}
+const OUR_POINTS = [
+  "2 индивидуальные сессии",
+  "Личный чат между встречами",
+  "Можно написать, когда вопрос возник",
+  "Разбираете ситуацию в моменте",
+];
 
 export function SolutionSection() {
   return (
@@ -295,48 +240,49 @@ export function SolutionSection() {
             Часто важные ситуации происходят между сессиями. Вместо того чтобы пытаться вспомнить всё через неделю, можно написать психологу сразу и продолжить работу в чате.
           </p>
         </FadeUp>
-        <div className="mb-14">
-          <ComparisonTable />
-        </div>
         <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <FadeUp delay={150}>
-            <div className="card-warm p-8 h-full">
-              <div className="section-tag mb-4">классический формат</div>
-              <ul className="space-y-3 mb-8">
-                {["4 сессии в месяц", "Только встречи"].map((t, i) => (
-                  <li key={i} className="flex items-center gap-3 font-body text-base" style={{ color: "var(--text-main)" }}>
-                    <Icon name="Check" size={16} style={{ color: "var(--text-muted)" }} />
+            <div className="card-warm p-8 h-full flex flex-col">
+              <div className="section-tag mb-6">классический формат</div>
+              <ul className="space-y-4 mb-8">
+                {CLASSIC_POINTS.map((t, i) => (
+                  <li key={i} className="flex items-start gap-3 font-body text-base" style={{ color: "var(--text-main)" }}>
+                    <Icon name="X" size={16} style={{ color: "var(--text-muted)" }} className="flex-shrink-0 mt-0.5" />
                     {t}
                   </li>
                 ))}
               </ul>
-              <div className="font-display text-3xl font-light" style={{ color: "var(--text-muted)" }}>
-                12 000–16 000 ₽ <span className="text-lg">/ мес</span>
-              </div>
-              <div className="font-body text-sm mt-2" style={{ color: "var(--text-muted)" }}>
-                ≈ 3 000–4 000 ₽ в неделю
+              <div className="mt-auto pt-6 border-t" style={{ borderColor: "var(--border)" }}>
+                <div className="font-display text-3xl font-light" style={{ color: "var(--text-muted)" }}>
+                  12 000–16 000 ₽ <span className="text-lg">/ мес</span>
+                </div>
+                <div className="font-body text-sm mt-2" style={{ color: "var(--text-muted)" }}>
+                  ≈ 3 000–4 000 ₽ за сессию
+                </div>
               </div>
             </div>
           </FadeUp>
           <FadeUp delay={250}>
-            <div className="card-warm p-8 h-full" style={{ backgroundColor: "var(--olive)" }}>
-              <div className="section-tag mb-4" style={{ color: "rgba(250,247,242,0.8)" }}>наш формат</div>
-              <ul className="space-y-3 mb-8">
-                {["2 индивидуальные сессии", "Личный чат между встречами"].map((t, i) => (
-                  <li key={i} className="flex items-center gap-3 font-body text-base" style={{ color: "var(--cream)" }}>
-                    <Icon name="Check" size={16} style={{ color: "var(--cream)" }} />
+            <div className="card-warm p-8 h-full flex flex-col" style={{ backgroundColor: "var(--olive)" }}>
+              <div className="section-tag mb-6" style={{ color: "rgba(250,247,242,0.8)" }}>наш формат</div>
+              <ul className="space-y-4 mb-8">
+                {OUR_POINTS.map((t, i) => (
+                  <li key={i} className="flex items-start gap-3 font-body text-base" style={{ color: "var(--cream)" }}>
+                    <Icon name="Check" size={16} style={{ color: "var(--cream)" }} className="flex-shrink-0 mt-0.5" />
                     {t}
                   </li>
                 ))}
               </ul>
-              <div className="font-display text-3xl font-light" style={{ color: "var(--cream)" }}>
-                8 999 ₽ <span className="text-lg">/ мес</span>
-              </div>
-              <div className="font-body text-sm mt-2" style={{ color: "rgba(250,247,242,0.75)" }}>
-                ≈ 2 250 ₽ в неделю
-              </div>
-              <div className="font-body text-sm mt-1 font-medium" style={{ color: "var(--cream)" }}>
-                На 25–44% дешевле классического формата
+              <div className="mt-auto pt-6 border-t" style={{ borderColor: "rgba(250,247,242,0.25)" }}>
+                <div className="font-display text-3xl font-light" style={{ color: "var(--cream)" }}>
+                  8 999 ₽ <span className="text-lg">/ мес</span>
+                </div>
+                <div className="font-body text-sm mt-2" style={{ color: "rgba(250,247,242,0.75)" }}>
+                  ≈ 2 250 ₽ в неделю
+                </div>
+                <div className="font-body text-sm mt-1 font-medium" style={{ color: "var(--cream)" }}>
+                  На 25–44% дешевле классического формата
+                </div>
               </div>
             </div>
           </FadeUp>
