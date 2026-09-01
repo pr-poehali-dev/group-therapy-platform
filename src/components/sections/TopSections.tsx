@@ -81,7 +81,7 @@ export function HeroSection() {
               <div className="flex flex-wrap gap-6">
                 {[
                   { icon: "CalendarCheck", text: "2 сессии в месяц" },
-                  { icon: "MessageCircle", text: "Личный чат между встречами" },
+                  { icon: "MessageCircle", text: "Встречи + общение в чате между встречами" },
                   { icon: "UserCheck", text: "Один психолог все время" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -141,7 +141,7 @@ export function HeroSection() {
               <div className="flex flex-wrap gap-6">
                 {[
                   { icon: "CalendarCheck", text: "2 сессии в месяц" },
-                  { icon: "MessageCircle", text: "Личный чат между встречами" },
+                  { icon: "MessageCircle", text: "Встречи + общение в чате между встречами" },
                   { icon: "UserCheck", text: "Один психолог все время" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2">
