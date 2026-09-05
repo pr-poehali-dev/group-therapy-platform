@@ -306,7 +306,9 @@ export function HybridFormatSection() {
             </FadeUp>
             <FadeUp delay={150}>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                Мы объединяем глубокую работу с психологом на онлайн-сессиях и поддержку в чате между встречами, чтобы работа продолжалась именно тогда, когда она вам нужна.
+                Вы выбираете психолога и дальше регулярно работаете с ним в двух форматах: на видеосессиях и в чате между встречами.
+                <br /><br />
+                Так важные вопросы можно обсуждать тогда, когда они действительно возникают.
               </p>
             </FadeUp>
             <div className="space-y-4 mb-8">
@@ -689,4 +691,3 @@ export function PhotoGallerySection() {
     </section>
   );
 }
-
