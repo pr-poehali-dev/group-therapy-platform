@@ -7,7 +7,6 @@ import review1 from "@/assets/photos/review1.webp";
 import review2 from "@/assets/photos/review2.webp";
 import review3 from "@/assets/photos/review3.webp";
 import review4 from "@/assets/photos/review4.webp";
-import chatBgPhoto from "@/assets/photos/chat_bg.webp";
 
 export const PHOTOS = {
   hero: heroPhoto,
@@ -15,7 +14,6 @@ export const PHOTOS = {
   portrait: portraitPhoto,
   journal: journalPhoto,
   online: onlinePhoto,
-  chatBg: chatBgPhoto,
 };
 
 export const PAINS = [
