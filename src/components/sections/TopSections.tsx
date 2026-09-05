@@ -5,6 +5,7 @@ import { PHOTOS, PAINS } from "@/components/shared/data";
 import formatIllustration from "@/assets/format_illustration.webp";
 import psych1Photo from "@/assets/photos/psych1.webp";
 import psych2Photo from "@/assets/photos/psych2.webp";
+import trialHeroPhoto from "@/assets/photos/trial_hero.webp";
 
 export function NavSection() {
   return (
@@ -149,6 +150,106 @@ export function HeroSection() {
               </div>
             </FadeUp>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TrialOfferSection() {
+  const points = [
+    { icon: "MessageCircle", text: "Ответ психолога в течение суток" },
+    { icon: "CreditCard", text: "1 000 ₽ засчитываются в стоимость первого месяца" },
+    { icon: "UserRound", text: "Можно сменить психолога" },
+  ];
+  return (
+    <section className="py-20 lg:py-24 overflow-hidden" style={{ backgroundColor: "var(--cream)" }}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <FadeUp>
+              <div className="section-tag mb-4">пробный формат</div>
+            </FadeUp>
+            <FadeUp delay={100}>
+              <h2 className="font-display text-4xl lg:text-5xl font-light leading-tight mb-6" style={{ color: "var(--text-main)" }}>
+                Попробуйте 7 дней общения с психологом{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>за 1 000 ₽</em>
+              </h2>
+            </FadeUp>
+            <FadeUp delay={150}>
+              <p className="font-body text-base leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
+                Вы выбираете психолога и 7 дней общаетесь с ним в чате. Если формат подойдёт, 1 000 ₽ засчитываются в стоимость первого месяца.
+              </p>
+            </FadeUp>
+            <div className="space-y-4 mb-8">
+              {points.map((item, i) => (
+                <FadeUp key={i} delay={200 + i * 70}>
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: "var(--beige)" }}
+                    >
+                      <span style={{ color: "var(--olive)" }}>
+                        <Icon name={item.icon} size={18} />
+                      </span>
+                    </div>
+                    <span className="font-body text-base" style={{ color: "var(--text-main)" }}>
+                      {item.text}
+                    </span>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
+            <FadeUp delay={420}>
+              <div className="flex flex-wrap gap-3 mb-3">
+                <a href="#form" className="btn-primary">
+                  Попробовать за 1 000 ₽
+                  <Icon name="ArrowRight" size={16} />
+                </a>
+                <a href="#format" className="btn-outline">Как это работает</a>
+              </div>
+              <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
+                Без обязательств · Не для экстренной помощи
+              </span>
+            </FadeUp>
+          </div>
+          <FadeUp delay={150} className="order-1 lg:order-2">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
+              <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+                <img src={trialHeroPhoto} alt="Общение с психологом в чате" className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(107,122,71,0.15) 0%, transparent 60%)" }} />
+              </div>
+              <div
+                className="absolute top-4 left-2 right-2 sm:top-8 sm:left-4 sm:right-auto sm:w-[78%] rounded-2xl p-4 shadow-lg"
+                style={{ backgroundColor: "var(--cream)" }}
+              >
+                <div className="flex items-center gap-3 mb-3 pb-3 border-b" style={{ borderColor: "var(--border)" }}>
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "rgba(107,122,71,0.15)" }}
+                  >
+                    <Icon name="UserRound" size={16} style={{ color: "var(--olive)" }} />
+                  </div>
+                  <div>
+                    <p className="font-body font-medium text-sm" style={{ color: "var(--text-main)" }}>Психолог</p>
+                  </div>
+                </div>
+                <div className="rounded-xl rounded-tl-sm px-3 py-2 max-w-[90%]" style={{ backgroundColor: "var(--beige)" }}>
+                  <p className="font-body text-xs sm:text-sm" style={{ color: "var(--text-main)" }}>
+                    Здравствуйте! Чем я могу быть вам полезна сегодня?
+                  </p>
+                </div>
+              </div>
+              <div
+                className="absolute bottom-4 left-2 right-2 sm:bottom-8 sm:right-4 sm:left-auto sm:w-[72%] rounded-2xl rounded-tr-sm p-4 shadow-lg"
+                style={{ backgroundColor: "var(--olive)" }}
+              >
+                <p className="font-body text-xs sm:text-sm" style={{ color: "var(--cream)" }}>
+                  Здравствуйте! Хотела бы обсудить свою ситуацию…
+                </p>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </div>
     </section>
