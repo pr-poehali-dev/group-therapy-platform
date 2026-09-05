@@ -3,6 +3,7 @@ import type { FormData } from "@/components/shared/data";
 import {
   NavSection,
   HeroSection,
+  TrialTeaserSection,
   TrialOfferSection,
   PainSection,
   SolutionSection,
@@ -58,6 +59,7 @@ export default function Index() {
     <div className="font-body" style={{ backgroundColor: "var(--cream)" }}>
       <NavSection />
       <HeroSection />
+      <TrialTeaserSection />
       <TrialOfferSection />
       <PainSection />
       <PsychologistsSection onSelect={handlePsychologistSelect} />

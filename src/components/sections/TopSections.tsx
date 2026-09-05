@@ -156,6 +156,38 @@ export function HeroSection() {
   );
 }
 
+export function TrialTeaserSection() {
+  return (
+    <section className="py-10 lg:py-12" style={{ backgroundColor: "var(--beige)" }}>
+      <div className="max-w-4xl mx-auto px-6">
+        <FadeUp>
+          <div
+            className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 rounded-3xl px-6 py-6 sm:px-10 sm:py-8 text-center sm:text-left"
+            style={{ backgroundColor: "var(--cream)", border: "1px solid var(--beige-dark)" }}
+          >
+            <div
+              className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{ backgroundColor: "rgba(107,122,71,0.12)" }}
+            >
+              <Icon name="Sparkles" size={26} style={{ color: "var(--olive)" }} />
+            </div>
+            <div>
+              <p className="font-body text-base sm:text-lg leading-snug" style={{ color: "var(--text-main)" }}>
+                Не обязательно сразу оплачивать месяц.
+              </p>
+              <p className="font-display text-xl sm:text-2xl font-light leading-snug" style={{ color: "var(--text-main)" }}>
+                Попробуйте неделю общения с психологом{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>за 1 000 ₽</em>{" "}
+                и решите после.
+              </p>
+            </div>
+          </div>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}
+
 export function TrialOfferSection() {
   const points = [
     { icon: "MessageCircle", text: "Ответ психолога в течение суток" },
