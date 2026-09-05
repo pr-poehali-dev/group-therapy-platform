@@ -22,16 +22,13 @@ export function NavSection() {
           <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>терапия</span>
         </div>
         <div className="hidden md:flex items-center gap-8">
-          {["Как это работает", "FAQ"].map((item, i) => (
-            <a
-              key={i}
-              href={`#${["how", "faq"][i]}`}
-              className="font-body text-sm transition-colors hover:text-olive"
-              style={{ color: "var(--text-muted)" }}
-            >
-              {item}
-            </a>
-          ))}
+          <a
+            href="#faq"
+            className="font-body text-sm transition-colors hover:text-olive"
+            style={{ color: "var(--text-muted)" }}
+          >
+            FAQ
+          </a>
         </div>
         <a href="#form" className="btn-primary text-sm py-2.5 px-5">
           Подобрать психолога
@@ -70,7 +67,7 @@ export function HeroSection() {
                     Подобрать психолога
                     <Icon name="ArrowRight" size={16} />
                   </a>
-                  <a href="#how" className="btn-outline">Как это работает</a>
+                  <a href="#format" className="btn-outline">Как это работает</a>
                 </div>
                 <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
                   Знакомство и подбор психолога — бесплатно
@@ -130,7 +127,7 @@ export function HeroSection() {
                     Подобрать психолога
                     <Icon name="ArrowRight" size={16} />
                   </a>
-                  <a href="#how" className="btn-outline">Как это работает</a>
+                  <a href="#format" className="btn-outline">Как это работает</a>
                 </div>
                 <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
                   Знакомство и подбор психолога — бесплатно
@@ -294,7 +291,7 @@ export function SolutionSection() {
 
 export function HybridFormatSection() {
   return (
-    <section className="py-20 lg:py-24 overflow-hidden" style={{ backgroundColor: "var(--cream)" }}>
+    <section id="format" className="py-20 lg:py-24 overflow-hidden" style={{ backgroundColor: "var(--cream)" }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
@@ -693,46 +690,3 @@ export function PhotoGallerySection() {
   );
 }
 
-export function HowItWorksSection() {
-  return (
-    <section id="how" className="py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <FadeUp>
-          <div
-            className="rounded-3xl p-10 lg:p-16 text-center max-w-3xl mx-auto relative overflow-hidden"
-            style={{ backgroundColor: "var(--olive)" }}
-          >
-            <div
-              className="absolute inset-0 opacity-10"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 15% 20%, white 0%, transparent 45%), radial-gradient(circle at 85% 80%, #C8C0DC 0%, transparent 45%)",
-              }}
-            />
-            <div className="relative z-10">
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 mx-auto"
-                style={{ backgroundColor: "rgba(250,247,242,0.15)" }}
-              >
-                <Icon name="Repeat" size={26} style={{ color: "var(--cream)" }} />
-              </div>
-              <h2
-                className="font-display text-3xl lg:text-4xl font-light leading-tight mb-6"
-                style={{ color: "var(--cream)" }}
-              >
-                Меньше видеовстреч —{" "}
-                <em className="not-italic" style={{ color: "#C8C0DC" }}>больше регулярной работы</em>
-              </h2>
-              <p
-                className="font-body text-base lg:text-lg leading-relaxed"
-                style={{ color: "rgba(250,247,242,0.85)" }}
-              >
-                Одна неделя — видеосессия + чат, следующая — работа в чате. Связь с психологом сохраняется весь месяц, поэтому вы экономите время и деньги, не ставя терапию на паузу.
-              </p>
-            </div>
-          </div>
-        </FadeUp>
-      </div>
-    </section>
-  );
-}

@@ -8,7 +8,6 @@ import {
   HybridFormatSection,
   WhyChatSection,
   PsychologistsSection,
-  HowItWorksSection,
 } from "@/components/sections/TopSections";
 import {
   AccentDividerSection,
@@ -60,7 +59,6 @@ export default function Index() {
       <NavSection />
       <HeroSection />
       <PainSection />
-      <HowItWorksSection />
       <HybridFormatSection />
       <SolutionSection />
       <WhyChatSection />
