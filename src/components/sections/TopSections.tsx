@@ -60,7 +60,7 @@ export function HeroSection() {
             <FadeUp delay={200}>
               <div className="border-t my-8" style={{ borderColor: "var(--border)" }} />
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)", maxWidth: "480px" }}>
-                Не только личная видеосессия, но и общение в чате между встречами. Можно обсудить важный вопрос тогда, когда он возник.
+                2 индивидуальные видеосессии в месяц + личный чат с психологом. Можно написать, когда что-то произошло, а специалист ответит в течение суток.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
@@ -120,7 +120,7 @@ export function HeroSection() {
           <div className="pt-4">
             <FadeUp delay={200}>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
-                Не только личная видеосессия, но и общение в чате между встречами. Можно обсудить важный вопрос тогда, когда он возник.
+                2 индивидуальные видеосессии в месяц + личный чат с психологом. Можно написать, когда что-то произошло, а специалист ответит в течение суток.
               </p>
             </FadeUp>
             <FadeUp delay={300}>
