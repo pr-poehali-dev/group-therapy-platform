@@ -52,7 +52,7 @@ export function HeroSection() {
                 style={{ color: "var(--text-main)" }}
               >
                 Психолог всегда на связи{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
+                <em className="not-italic" style={{ color: "var(--olive)" }}>по видео и в чате</em>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
@@ -106,7 +106,7 @@ export function HeroSection() {
               style={{ color: "var(--text-main)" }}
             >
               Психолог всегда на связи{" "}
-              <em className="not-italic" style={{ color: "var(--olive)" }}>за 2 250 рублей в неделю</em>
+              <em className="not-italic" style={{ color: "var(--olive)" }}>по видео и в чате</em>
             </h1>
           </FadeUp>
           <FadeUp delay={150} className="relative">
