@@ -51,8 +51,8 @@ export function HeroSection() {
                 className="font-display text-6xl xl:text-7xl font-light leading-tight mb-6"
                 style={{ color: "var(--text-main)" }}
               >
-                Психолог всегда на связи{" "}
-                <em className="not-italic" style={{ color: "var(--olive)" }}>по видео и в чате</em>
+                Попробуйте 7 дней общения с психологом{" "}
+                <em className="not-italic" style={{ color: "var(--olive)" }}>за 1 000 ₽</em>
               </h1>
             </FadeUp>
             <FadeUp delay={200}>
@@ -105,8 +105,8 @@ export function HeroSection() {
               className="font-display text-5xl font-light leading-tight"
               style={{ color: "var(--text-main)" }}
             >
-              Психолог всегда на связи{" "}
-              <em className="not-italic" style={{ color: "var(--olive)" }}>по видео и в чате</em>
+              Попробуйте 7 дней общения с психологом{" "}
+              <em className="not-italic" style={{ color: "var(--olive)" }}>за 1 000 ₽</em>
             </h1>
           </FadeUp>
           <FadeUp delay={150} className="relative">
